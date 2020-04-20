@@ -2,18 +2,14 @@ import classes from '../data/classes.js';
 import { findById, setPlayerProfile } from '../common/utils.js';
 const playerForms = document.getElementById('character-selector');
 
-
-
-
-
 playerForms.addEventListener('submit', (event) => {
     event.preventDefault();
     const playerData = new FormData(playerForms);
     
     makeUsers(playerData);
 
-}   
-);
+    window.location.href = './battlefield.html';
+});
 
 function makeUsers(playerData) {
     
@@ -26,14 +22,14 @@ function makeUsers(playerData) {
     const player1Character = findById(classes, player1Class);
     const player2Character = findById(classes, player2Class);
 
-    const playerObject1 = { 
+    const player1Object = { 
         name: player1Name,
         class: player1Class,
         health: player1Character.baseHp,
         energy: player1Character.baseEnergy
 
     };
-    const playerObject2 = { 
+    const player2Object = { 
         name: player2Name,
         class: player2Class,
         health: player2Character.baseHp,
@@ -41,6 +37,6 @@ function makeUsers(playerData) {
     
 
     };
-    setPlayerProfile('player1', playerObject1);
-    setPlayerProfile('player2', playerObject2);
+    setPlayerProfile('player1', player1Object);
+    setPlayerProfile('player2', player2Object);
 }
