@@ -3,12 +3,12 @@ const navigateButton = document.getElementById('navigate-button');
 
 
 
-const player1Actions = getLocalStorage();
-const player2Actions = getLocalStorage();
+const player1 = getLocalStorage('player1');
+const player2 = getLocalStorage('player2');
 
 let firstPlayer = 'player1';
 
-if (!player1Actions && !player2Actions) {
+if (!player1.hasAttacked && !player2.hasAttacked) {
     const flip = Math.random();
     if (flip > .5) {
         firstPlayer = 'player2';
