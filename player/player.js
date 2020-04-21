@@ -20,11 +20,13 @@ button.addEventListener('click', () => {
 
     if (currentTurn === 'attack') {
         currentPlayer.hasAttacked = true;
+        currentPlayer.attackId = selectedAction.value;
     } else {
         currentPlayer.hasDefended = true;
+        currentPlayer.defendId = selectedAction.value;
     }
     setPlayerProfile(playerId, currentPlayer);
     setActions(selectedAction.value);
 
-    window.location.href = '../battlefield.html';
+    window.location.href = '../interim.html';
 });

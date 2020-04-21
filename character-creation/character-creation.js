@@ -8,7 +8,7 @@ playerForms.addEventListener('submit', (event) => {
     
     makeUsers(playerData);
 
-    window.location.href = './battlefield.html';
+    window.location.href = './interim.html';
 });
 
 function makeUsers(playerData) {
