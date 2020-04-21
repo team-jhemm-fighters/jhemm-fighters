@@ -19,3 +19,20 @@ export function getLocalStorage(string) {
     const data = JSON.parse(temp);
     return data;
 }
+
+export function setActions(action) {
+    const temp = getActions();
+    temp.push(action);
+    const stringytemp = JSON.stringify(temp);
+    localStorage.setItem('actions', stringytemp);
+
+}
+
+export function getActions() {
+    const item = localStorage.getItem('actions');
+    let temp = JSON.parse(item);
+    if (!temp) {
+        temp = [];   
+    }
+    return temp;
+}
