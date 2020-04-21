@@ -27,16 +27,16 @@ function makeUsers(playerData) {
         class: player1Class,
         health: player1Character.baseHp,
         energy: player1Character.baseEnergy,
-        hasAttacked: false
-
+        hasAttacked: false,
+        hasDefended: false
     };
     const player2Object = { 
         name: player2Name,
         class: player2Class,
         health: player2Character.baseHp,
         energy: player2Character.baseEnergy,
-        hasAttacked: false
-    
+        hasAttacked: false,
+        hasDefended: false
     };
     setPlayerProfile('player1', player1Object);
     setPlayerProfile('player2', player2Object);
