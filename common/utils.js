@@ -36,3 +36,14 @@ export function getActions() {
     }
     return temp;
 }
+
+export function getRoundOne() {
+    const temp = localStorage.getItem('round1');
+    const data = JSON.parse(temp);
+    return data;
+}
+export function getRoundTwo() {
+    const temp = localStorage.getItem('round2');
+    const data = JSON.parse(temp);
+    return data;
+}
