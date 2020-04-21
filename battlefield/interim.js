@@ -1,4 +1,4 @@
-import { getLocalStorage, getRoundOne, getRoundTwo } from '../common/utils.js';
+import { getLocalStorage, getRoundOne, getRoundTwo, setPlayerProfile } from '../common/utils.js';
 
 const navigateButton = document.getElementById('navigate-button');
 const player1 = getLocalStorage('player1');
@@ -46,9 +46,23 @@ function turnTwo(player1, player2) {
 }
 
 function roundComplete() {
-    console.log('complete');
-    // localStorage.removeItem('round1');
-    // localStorage.removeItem('round2');
+    localStorage.removeItem('round1');
+    localStorage.removeItem('round2');
+
+    player1.hasAttacked = false;
+    player1.hasDefended = false;
+
+    player2.hasDefended = false;
+    player2.hasAttacked = false;
+
+    player1.attackId = '';
+    player1.defendId = '';
+
+    player2.attackId = '';
+    player2.defendId = '';
+
+    setPlayerProfile('player1', player1);
+    setPlayerProfile('player2', player2);
     
 }
 

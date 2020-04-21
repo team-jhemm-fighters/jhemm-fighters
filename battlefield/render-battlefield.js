@@ -35,11 +35,9 @@ export function renderBattlefield(a, b) {
     if (actions.length === 2) {
         const damageDone = calculateDamage(player1.attackId, player2.defendId);
     } else if (actions.length === 4) {
-
-    }
     
+    }
 }
-
 
 export function calculateDamage(attackAction, defendAction) {
     let damageNum = 0;
