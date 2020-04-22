@@ -1,5 +1,7 @@
 @import './typography.css';
 
+@import './colors.css';
+
 * {
     box-sizing: border-box;
 }
@@ -8,6 +10,8 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+/* layout & arrangement */
 
 body {
     display: grid;
@@ -27,6 +31,7 @@ body {
 .two-column-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 2em;
 }
 
 .flex-column {
@@ -34,4 +39,52 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+article {
+    margin: 1em auto;
+}
+
+button, input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+}
+
+/* borders, padding, colors, etc. */
+
+/*
+variables:
+    --main-bg-color
+    --accent-light
+    --accent-medium
+    --accent-medium-dark
+    --accent-dark
+*/
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+section {
+    padding: 2.5em;
+}
+
+button, input[type="submit"] {
+    border: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color: var(--accent-light);
+}
+
+.bordered-box {
+    border: 2px solid var(--accent-light);
+}
+
+.logo {
+    color: var(--accent-medium-dark);
 }

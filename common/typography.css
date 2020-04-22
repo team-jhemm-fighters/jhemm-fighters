@@ -27,10 +27,11 @@ h1, h2, h3 {
     font-family: 'Cinzel Decorative Bold';
 }
 
-/* font sizes */
+/* font sizes & default margins */
 
 h1 {
     font-size: 2em;
+    margin: .5em auto;
 }
 
 h2 {
@@ -42,5 +43,13 @@ h3 {
 }
 
 .logo {
-    font-size: 3em;
+    font-size: 3.5em;
+}
+
+button, input[type="submit"]:not(.big-button) {
+    font-size: 1em;
+}
+
+.big-button {
+    font-size: 2em;
 }
