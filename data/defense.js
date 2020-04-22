@@ -1,3 +1,13 @@
+const recoverEnergy = {
+    id: 'action0',
+    name: 'Recover Energy',
+    description: 'something happens',
+    defenseRating: 0,
+    health: 0,
+    energyReq: -3
+};
+
+
 const silentWeakDodge = {
     id: 'action1',
     name: 'Silent Weak Dodge',
@@ -13,7 +23,7 @@ const silentMediumDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 2
 };
 
 const silentStrongDodge = {
@@ -22,7 +32,7 @@ const silentStrongDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 3
 };
 
 const brawnWeakDodge = {
@@ -40,7 +50,7 @@ const brawnMediumDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 2
 };
 
 const brawnStrongDodge = {
@@ -49,7 +59,7 @@ const brawnStrongDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 3
 };
 
 const casterWeakDodge = {
@@ -80,6 +90,7 @@ const casterStrongDodge = {
 };
 
 const defense = [
+    recoverEnergy,
     silentWeakDodge,
     silentMediumDodge,
     silentStrongDodge,

@@ -9,9 +9,19 @@ const player2Move = document.getElementById('player2Move');
 const player1Description = document.getElementById('player1Description');
 const player2Description = document.getElementById('player2Description');
 const finalStats = document.getElementById('finalStats');
-const turnOrder = getLocalStorage('TURN-PATTERN');
+let turnOrder = getLocalStorage('TURN-PATTERN');
 
 const roundOneDone = getRoundOne();
+
+if (roundOneDone === true) {
+    if (turnOrder === 'player1First') {
+        turnOrder = 'player2First';
+    } else if (turnOrder === 'player2First') {
+        turnOrder = 'player1First';
+    }
+
+}
+
 
 // if (turnOrder === 'player1First') {
 // const player1 = getLocalStorage('player1');
@@ -32,13 +42,24 @@ if (turnOrder === 'player1First') {
     player2Move.textContent = player2DefenseObject.name;
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
-    applyDamage(player1, player2);
+
+    const arrayDamage = applyDamage(player1, player2);
+    const randomRollNumber = arrayDamage[0];
+    const numberNeeded = arrayDamage[2];
+    const damageDealt = arrayDamage[1];
+    finalStats.textContent = 'the number the attacker rolled was ' + randomRollNumber + ' you needed ' + numberNeeded + ' to hit. The defender took ' + damageDealt + ' damage.';
+
 } else {
     player1Move.textContent = player1DefenseObject.name;
     player2Move.textContent = player2AttackObject.name;
     player1Description.textContent = player1DefenseObject.description;
     player2Description.textContent = player2AttackObject.description;
-    applyDamage(player2, player1);
+
+    const arrayDamage = applyDamage(player2, player1);
+    const randomRollNumber = arrayDamage[0];
+    const numberNeeded = arrayDamage[2];
+    const damageDealt = arrayDamage[1];
+    finalStats.textContent = 'the number the attacker rolled was ' + randomRollNumber + ' you needed ' + numberNeeded + ' to hit. The defender took ' + damageDealt + ' damage.';
 }
 
 const buttonLink = document.getElementById('link-button');

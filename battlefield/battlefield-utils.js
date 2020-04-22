@@ -17,17 +17,18 @@ export function turnOrder() {
 export function applyDamage(attackingPlayer, defendingPlayer) {
 
     const damageNum = calculateDamage(attackingPlayer.attackId, defendingPlayer.defendId);
-    defendingPlayer.health = defendingPlayer.health - damageNum;
+    defendingPlayer.health = defendingPlayer.health - damageNum[1];
+
     const energyUseAttacker = calculateEnergy(attacks, attackingPlayer.attackId);
     const energyUseDefender = calculateEnergy(defense, defendingPlayer.defendId);
 
     attackingPlayer.energy = attackingPlayer.energy - energyUseAttacker;
     defendingPlayer.energy = defendingPlayer.energy - energyUseDefender;
-    console.log('a', attackingPlayer, 'd', defendingPlayer);
+   
 
     setPlayerProfile(attackingPlayer.id, attackingPlayer);
     setPlayerProfile(defendingPlayer.id, defendingPlayer);
- 
+    return damageNum;
 }
 
 export function calculateDamage(attackAction, defendAction) {
@@ -43,8 +44,8 @@ export function calculateDamage(attackAction, defendAction) {
         // attack hits
         damageNum = attackObject.damage;
     }
-    
-    return damageNum;
+    const numbers = [randomNum, damageNum, hitChance];
+    return numbers;
 }
 
 export function calculateEnergy(array, action) {
