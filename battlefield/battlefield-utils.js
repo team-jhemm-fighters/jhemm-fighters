@@ -64,5 +64,3 @@ export function isDead(hp) {
         return false;
     }
 }
-
-export function 
