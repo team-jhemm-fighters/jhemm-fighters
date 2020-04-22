@@ -9,8 +9,16 @@ const player2Move = document.getElementById('player2Move');
 const player1Description = document.getElementById('player1Description');
 const player2Description = document.getElementById('player2Description');
 const finalStats = document.getElementById('finalStats');
+const turnOrder = getLocalStorage('TURN-PATTERN');
 
 const roundOneDone = getRoundOne();
+
+// if (turnOrder === 'player1First') {
+// const player1 = getLocalStorage('player1');
+// const player2 = getLocalStorage('player2');
+// //} else 
+// const player1 = getLocalStorage('player2');
+// const player2 = getLocalStorage('player1');
 
 const player1 = getLocalStorage('player1');
 const player2 = getLocalStorage('player2');
@@ -19,8 +27,7 @@ const player2DefenseObject = findById(defense, player2.defendId);
 const player1DefenseObject = findById(defense, player1.defendId);
 const player2AttackObject = findById(attacks, player2.attackId);
 
-
-if (!roundOneDone) {
+if (turnOrder === 'player1First') {
     player1Move.textContent = player1AttackObject.name;
     player2Move.textContent = player2DefenseObject.name;
     player1Description.textContent = player1AttackObject.description;
@@ -33,6 +40,8 @@ if (!roundOneDone) {
     player2Description.textContent = player2AttackObject.description;
     applyDamage(player2, player1);
 
+
+    
 }
 
 const buttonLink = document.getElementById('link-button');
@@ -49,7 +58,6 @@ function setRoundTwoTrue() {
 
 
 buttonLink.addEventListener('click', () => {
-
 
     if (roundOneDone === true) {
         setRoundTwoTrue();
