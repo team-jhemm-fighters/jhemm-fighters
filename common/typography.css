@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Astloch Regular';
+    src: url('../assets/fonts/Astloch/Astloch-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Cinzel Decorative Bold';
+    src: url('../assets/fonts/Cinzel_Decorative/CinzelDecorative-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('../assets/fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+
+/* font families */
+
+html, button, input {
+    font-family: 'Open Sans Regular';
+}
+
+h1, h2, h3 {
+    font-family: 'Astloch Regular';
+}
+
+.logo {
+    font-family: 'Cinzel Decorative Bold';
+}
+
+/* font sizes */
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.logo {
+    font-size: 3em;
+}
