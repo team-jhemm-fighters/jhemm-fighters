@@ -13,7 +13,7 @@ const silentMediumDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 2
 };
 
 const silentStrongDodge = {
@@ -22,7 +22,7 @@ const silentStrongDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 3
 };
 
 const brawnWeakDodge = {
@@ -40,7 +40,7 @@ const brawnMediumDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 2
 };
 
 const brawnStrongDodge = {
@@ -49,7 +49,7 @@ const brawnStrongDodge = {
     description: 'something happens',
     defenseRating: 1,
     health: 0,
-    energyReq: 1
+    energyReq: 3
 };
 
 const casterWeakDodge = {

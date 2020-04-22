@@ -9,9 +9,19 @@ const player2Move = document.getElementById('player2Move');
 const player1Description = document.getElementById('player1Description');
 const player2Description = document.getElementById('player2Description');
 const finalStats = document.getElementById('finalStats');
-const turnOrder = getLocalStorage('TURN-PATTERN');
+let turnOrder = getLocalStorage('TURN-PATTERN');
 
 const roundOneDone = getRoundOne();
+
+if (roundOneDone === true) {
+    if (turnOrder === 'player1First') {
+        turnOrder = 'player2First';
+    } else if (turnOrder === 'player2First') {
+        turnOrder = 'player1First';
+    }
+
+}
+
 
 // if (turnOrder === 'player1First') {
 // const player1 = getLocalStorage('player1');
@@ -33,6 +43,8 @@ if (turnOrder === 'player1First') {
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
     applyDamage(player1, player2);
+
+
 } else {
     player1Move.textContent = player1DefenseObject.name;
     player2Move.textContent = player2AttackObject.name;

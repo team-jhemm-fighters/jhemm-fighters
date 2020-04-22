@@ -59,6 +59,11 @@ function createAction(action) {
     const label = document.createElement('label');
     label.classList.add('action');
     const radio = document.createElement('input');
+
+    if (currentPlayer.energy < action.energyReq) {
+        radio.disabled = true;
+    }
+
     radio.type = 'radio';
     radio.name = 'action';
     radio.required = true;

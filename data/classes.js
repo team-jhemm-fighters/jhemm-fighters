@@ -3,7 +3,7 @@ const rogue = {
     name: 'Rogue',
     image: '../assets/rogue.png',
     baseHp: 5,
-    baseEnergy: 10,
+    baseEnergy: 3,
 
     atkActions: [
         'action1',
@@ -22,7 +22,7 @@ const brawn = {
     name: 'The Brawn',
     image: '../assets/rogue.png',
     baseHp: 5,
-    baseEnergy: 10,
+    baseEnergy: 3,
 
     atkActions: [
         'action4',
@@ -41,7 +41,7 @@ const caster = {
     name: 'The Caster',
     image: '../assets/rogue.png',
     baseHp: 5,
-    baseEnergy: 10,
+    baseEnergy: 3,
 
     atkActions: [
         'action7',

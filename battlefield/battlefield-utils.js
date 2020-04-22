@@ -18,12 +18,13 @@ export function applyDamage(attackingPlayer, defendingPlayer) {
 
     const damageNum = calculateDamage(attackingPlayer.attackId, defendingPlayer.defendId);
     defendingPlayer.health = defendingPlayer.health - damageNum;
+
     const energyUseAttacker = calculateEnergy(attacks, attackingPlayer.attackId);
     const energyUseDefender = calculateEnergy(defense, defendingPlayer.defendId);
 
     attackingPlayer.energy = attackingPlayer.energy - energyUseAttacker;
     defendingPlayer.energy = defendingPlayer.energy - energyUseDefender;
-    console.log('a', attackingPlayer, 'd', defendingPlayer);
+    console.log(energyUseAttacker, energyUseDefender, attackingPlayer.energy, defendingPlayer.energy);
 
     setPlayerProfile(attackingPlayer.id, attackingPlayer);
     setPlayerProfile(defendingPlayer.id, defendingPlayer);
