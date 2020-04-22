@@ -6,7 +6,7 @@ export function findById(array, id) {
         }
     }
 
-    return null;
+    // return null;
 }
 
 export function setPlayerProfile(string, object) {

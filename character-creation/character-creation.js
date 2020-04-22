@@ -23,6 +23,7 @@ function makeUsers(playerData) {
     const player2Character = findById(classes, player2Class);
 
     const player1Object = { 
+        id: 'player1',
         name: player1Name,
         class: player1Class,
         health: player1Character.baseHp,
@@ -33,6 +34,7 @@ function makeUsers(playerData) {
         defendId: ''
     };
     const player2Object = { 
+        id: 'player2',
         name: player2Name,
         class: player2Class,
         health: player2Character.baseHp,
