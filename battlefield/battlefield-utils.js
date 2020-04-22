@@ -23,6 +23,7 @@ export function applyDamage(attackingPlayer, defendingPlayer) {
 
     attackingPlayer.energy = attackingPlayer.energy - energyUseAttacker;
     defendingPlayer.energy = defendingPlayer.energy - energyUseDefender;
+    console.log('a', attackingPlayer, 'd', defendingPlayer);
 
     setPlayerProfile(attackingPlayer.id, attackingPlayer);
     setPlayerProfile(defendingPlayer.id, defendingPlayer);
@@ -53,4 +54,13 @@ export function calculateEnergy(array, action) {
     const energyCost = actionObject.energyReq;
 
     return energyCost;
+}
+
+
+export function isDead(hp) {
+    if (hp <= 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

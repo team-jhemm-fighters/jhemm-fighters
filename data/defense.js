@@ -1,34 +1,94 @@
-const casterHealingLight = {
+const silentWeakDodge = {
     id: 'action1',
-    name: 'Healing Light',
-    description: 'You call out to your arcane powers to heal your wounds and protect you from harm.',
+    name: 'Silent Weak Dodge',
+    description: 'something happens',
     defenseRating: 1,
-    health: 2,
-    energyReq:2
-};
-
-const casterFrostShield = {
-    id: 'action2',
-    name: 'Frost Shield',
-    description: 'You surround yourself with a barrier made of frost.',
-    defenseRating: 3,
     health: 0,
-    energyReq: 5
+    energyReq: 1
 };
 
-const casterLightningDodge = {
+const silentMediumDodge = {
+    id: 'action2',
+    name: 'Silent Medium Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const silentStrongDodge = {
     id: 'action3',
-    name: 'Lightning Dodge',
-    description: 'You send lightning through your body to dodge out of the way.',
+    name: 'Silent Strong Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const brawnWeakDodge = {
+    id: 'action4',
+    name: 'Brawn Weak Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const brawnMediumDodge = {
+    id: 'action5',
+    name: 'Brawn Medium Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const brawnStrongDodge = {
+    id: 'action6',
+    name: 'Brawn Strong Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const casterWeakDodge = {
+    id: 'action7',
+    name: 'Caster Weak Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const casterMediumDodge = {
+    id: 'action8',
+    name: 'Caster Medium Dodge',
+    description: 'something happens',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
+const casterStrongDodge = {
+    id: 'action9',
+    name: 'Caster Strong Dodge',
+    description: 'something happens',
     defenseRating: 1,
     health: 0,
     energyReq: 1
 };
 
 const defense = [
-    casterHealingLight,
-    casterFrostShield,
-    casterLightningDodge
+    silentWeakDodge,
+    silentMediumDodge,
+    silentStrongDodge,
+    brawnWeakDodge,
+    brawnMediumDodge,
+    brawnStrongDodge,
+    casterWeakDodge,
+    casterMediumDodge,
+    casterStrongDodge
 ];
 
 export default defense;
