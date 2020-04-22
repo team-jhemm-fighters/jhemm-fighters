@@ -1,9 +1,15 @@
 import { getLocalStorage, getRoundOne, getRoundTwo, setPlayerProfile } from '../common/utils.js';
+import { turnOrder } from '../battlefield/battlefield-utils.js';
 
 const navigateButton = document.getElementById('navigate-button');
 const player1 = getLocalStorage('player1');
 const player2 = getLocalStorage('player2');
 
+if (!player1.hasAttacked && !player2.hasAttacked) {
+    turnOrder();
+}
+
+const turnPattern = getLocalStorage('TURN-PATTERN');
 
 let turnOneComplete = false;
 let turnTwoComplete = false;
@@ -14,14 +20,15 @@ turnTwoComplete = getRoundTwo();
 let link = '';
 
 function turnOne(player1, player2) {
+    //change to better variable names i.e. player1 = firstPlayer
     //player 1 chooses attack
     if (!player1.hasAttacked) {
         navigateButton.textContent = 'Go to: ' + player1.name;
-        link = '../player.html?id=player1&turn=attack';
+        link = '../player.html?id=' + player1.id + '&turn=attack';
         //player 2 chooses defense
     } else if (player1.hasAttacked === true && player2.hasDefended === false) {
         navigateButton.textContent = 'Go to: ' + player2.name;
-        link = '../player.html?id=player2&turn=defend';
+        link = '../player.html?id=' + player2.id + '&turn=defend';
     } else {
         //battle screen
         navigateButton.textContent = 'Go to: Battle 1a';
@@ -30,13 +37,13 @@ function turnOne(player1, player2) {
 }
 
 function turnTwo(player1, player2) {
-    if (!player1.hasAttacked) {
-        navigateButton.textContent = 'Go to: ' + player1.name;
-        link = '../player.html?id=player2&turn=attack';
-        //player 2 chooses defense
-    } else if (player1.hasAttacked === true && player2.hasDefended === false) {
+    if (!player2.hasAttacked) {
         navigateButton.textContent = 'Go to: ' + player2.name;
-        link = '../player.html?id=player1&turn=defend';
+        link = '../player.html?id=' + player2.id + '&turn=attack';
+        //player 2 chooses defense
+    } else if (player2.hasAttacked === true && player1.hasDefended === false) {
+        navigateButton.textContent = 'Go to: ' + player1.name;
+        link = '../player.html?id=' + player1.id + '&turn=defend';
     } else {
         //battle screen
         navigateButton.textContent = 'Go to: Battle final this round';
@@ -65,15 +72,26 @@ function roundComplete() {
     setPlayerProfile('player2', player2);
     
 }
-
-if (!turnOneComplete) {
-    turnOne(player1, player2);
-} else if (turnOneComplete && !turnTwoComplete) {
-    turnTwo(player2, player1);
+if (turnPattern === 'player1First') {
+    if (!turnOneComplete) {
+        console.log('turn 1 is starting');
+        turnOne(player1, player2);
+        console.log('turn 1 is done');
+    } else if (turnOneComplete && !turnTwoComplete) {
+        console.log('turn 2 is starting');
+        turnTwo(player1, player2);
+    } else {
+        roundComplete();
+    }
 } else {
-    roundComplete();
+    if (!turnOneComplete) {
+        turnOne(player2, player1);
+    } else if (turnOneComplete && !turnTwoComplete) {
+        turnTwo(player2, player1);
+    } else {
+        roundComplete();
+    }
 }
-
 
 navigateButton.addEventListener('click', () => {
     location.href = link;
