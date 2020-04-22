@@ -41,6 +41,14 @@ body {
     align-content: center;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .centered-text {
     text-align: center;
 }
@@ -67,6 +75,8 @@ variables:
 
 body {
     background-color: var(--main-bg-color);
+    background-image: url('../assets/main-bg.jpg');
+    color: var(--accent-dark);
 }
 
 section {
@@ -77,14 +87,31 @@ button, input[type="submit"] {
     border: 0px;
     border-radius: 10px;
     padding: 10px;
-    color: white;
+    color: var(--main-bg-color);
     background-color: var(--accent-light);
 }
 
+.no-bullets {
+    list-style-type: none;
+    margin-inline-start: 0;
+}
+
+.circle-image {
+    border-radius: 50%;
+}
+
 .bordered-box {
-    border: 2px solid var(--accent-light);
+    border: 1px solid var(--accent-extra-light);
+}
+
+.main-bg {
+    background-color: var(--main-bg-color);
+}
+
+.accent-bg {
+    background-color: var(--accent-extra-light);
 }
 
 .logo {
-    color: var(--accent-medium-dark);
+    color: var(--accent-medium);
 }
