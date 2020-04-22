@@ -6,11 +6,13 @@ const rogue = {
     baseEnergy: 3,
 
     atkActions: [
+        'action0',
         'action1',
         'action2',
         'action3'
     ],
     defActions: [
+        'action0',
         'action1',
         'action2',
         'action3'
@@ -25,11 +27,13 @@ const brawn = {
     baseEnergy: 3,
 
     atkActions: [
+        'action0',
         'action4',
         'action5',
         'action6'
     ],
     defActions: [
+        'action0',
         'action4',
         'action5',
         'action6'
@@ -44,11 +48,13 @@ const caster = {
     baseEnergy: 3,
 
     atkActions: [
+        'action0',
         'action7',
         'action8',
         'action9'
     ],
     defActions: [
+        'action0',
         'action7',
         'action8',
         'action9'

@@ -1,3 +1,13 @@
+const recoverEnergy = {
+    id: 'action0',
+    name: 'Recover Energy',
+    description: 'You attempt to stab your opponent!',
+    minEffectiveRoll: 0,
+    damage: 0,
+    energyReq: -3
+};
+
+
 const silentWeak = {
     id: 'action1',
     name: 'Silent Weak Attack',
@@ -82,6 +92,7 @@ const casterStrong = {
 
 
 const attacks = [
+    recoverEnergy,
     silentWeak,
     silentMedium,
     silentStrong,
