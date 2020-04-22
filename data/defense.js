@@ -8,98 +8,184 @@ const recoverEnergy = {
 };
 
 
-const silentWeakDodge = {
+// const silentWeakDodge = {
+//     id: 'action1',
+//     name: 'Silent Weak Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 1
+// };
+
+// const silentMediumDodge = {
+//     id: 'action2',
+//     name: 'Silent Medium Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 2
+// };
+
+// const silentStrongDodge = {
+//     id: 'action3',
+//     name: 'Silent Strong Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 3
+// };
+
+// const brawnWeakDodge = {
+//     id: 'action4',
+//     name: 'Brawn Weak Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 1
+// };
+
+// const brawnMediumDodge = {
+//     id: 'action5',
+//     name: 'Brawn Medium Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 2
+// };
+
+// const brawnStrongDodge = {
+//     id: 'action6',
+//     name: 'Brawn Strong Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 3
+// };
+
+// const casterWeakDodge = {
+//     id: 'action7',
+//     name: 'Caster Weak Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 1
+// };
+
+// const casterMediumDodge = {
+//     id: 'action8',
+//     name: 'Caster Medium Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 1
+// };
+
+// const casterStrongDodge = {
+//     id: 'action9',
+//     name: 'Caster Strong Dodge',
+//     description: 'something happens',
+//     defenseRating: 1,
+//     health: 0,
+//     energyReq: 1
+// };
+
+const silentSmokeBomb = {
     id: 'action1',
-    name: 'Silent Weak Dodge',
-    description: 'something happens',
-    defenseRating: 1,
+    name: 'Smoke Bomb',
+    description: 'You throw a smokeBomb at your feet and hide from your attacker!',
+    defenseRating: 2,
     health: 0,
-    energyReq: 1
+    energyReq: 2
 };
-
-const silentMediumDodge = {
+const silentMirrorImage = {
     id: 'action2',
-    name: 'Silent Medium Dodge',
-    description: 'something happens',
-    defenseRating: 1,
+    name: 'Mirror Image',
+    description: 'You use your illusion skills to make a mirror image of yourself!',
+    defenseRating: 4,
     health: 0,
-    energyReq: 2
+    energyReq: 4
 };
-
-const silentStrongDodge = {
+const silentDodge = {
     id: 'action3',
-    name: 'Silent Strong Dodge',
-    description: 'something happens',
-    defenseRating: 1,
-    health: 0,
-    energyReq: 3
-};
-
-const brawnWeakDodge = {
-    id: 'action4',
-    name: 'Brawn Weak Dodge',
-    description: 'something happens',
+    name: 'Dodge',
+    description: 'You attempt to slide away from your opponents attack.',
     defenseRating: 1,
     health: 0,
     energyReq: 1
 };
-
-const brawnMediumDodge = {
-    id: 'action5',
-    name: 'Brawn Medium Dodge',
-    description: 'something happens',
+const casterHealingLight = {
+    id: 'action7',
+    name: 'Healing Light',
+    description: 'You call out to your arcane powers to heal your wounds and protect you from harm.',
     defenseRating: 1,
+    health: 2,
+    energyReq: 2
+};
+const casterFrostShield = {
+    id: 'action8',
+    name: 'Frost Shield',
+    description: 'You surround yourself with a barrier made of frost.',
+    defenseRating: 3,
+    health: 0,
+    energyReq: 5
+};
+const casterLightningDodge = {
+    id: 'action9',
+    name: 'Lightning Dodge',
+    description: 'You send lightning through your body to dodge out of the way.',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+const brawnUnstoppable = {
+    id: 'action4',
+    name: 'Unstoppable',
+    description: 'You plant your feet and prepare to be assaulted.',
+    defenseRating: 3,
+    health: 0,
+    energyReq: 3
+};
+const brawnDodge = {
+    id: 'action5',
+    name: 'Dodge',
+    description: 'You attempt to do a barrel roll!',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+const brawnRaiseShield = {
+    id: 'action6',
+    name: 'Raise Shield',
+    description: 'You raise your shield to catch an attack being sent at you.',
+    defenseRating: 2,
     health: 0,
     energyReq: 2
 };
-
-const brawnStrongDodge = {
-    id: 'action6',
-    name: 'Brawn Strong Dodge',
-    description: 'something happens',
-    defenseRating: 1,
-    health: 0,
-    energyReq: 3
-};
-
-const casterWeakDodge = {
-    id: 'action7',
-    name: 'Caster Weak Dodge',
-    description: 'something happens',
-    defenseRating: 1,
-    health: 0,
-    energyReq: 1
-};
-
-const casterMediumDodge = {
-    id: 'action8',
-    name: 'Caster Medium Dodge',
-    description: 'something happens',
-    defenseRating: 1,
-    health: 0,
-    energyReq: 1
-};
-
-const casterStrongDodge = {
-    id: 'action9',
-    name: 'Caster Strong Dodge',
-    description: 'something happens',
-    defenseRating: 1,
-    health: 0,
-    energyReq: 1
-};
-
 const defense = [
     recoverEnergy,
-    silentWeakDodge,
-    silentMediumDodge,
-    silentStrongDodge,
-    brawnWeakDodge,
-    brawnMediumDodge,
-    brawnStrongDodge,
-    casterWeakDodge,
-    casterMediumDodge,
-    casterStrongDodge
+    silentDodge,
+    silentMirrorImage,
+    silentSmokeBomb,
+    brawnDodge,
+    brawnRaiseShield,
+    brawnUnstoppable,
+    casterFrostShield,
+    casterLightningDodge,
+    casterHealingLight
 ];
-
 export default defense;
+
+// const defense = [
+//     recoverEnergy,
+//     silentWeakDodge,
+//     silentMediumDodge,
+//     silentStrongDodge,
+//     brawnWeakDodge,
+//     brawnMediumDodge,
+//     brawnStrongDodge,
+//     casterWeakDodge,
+//     casterMediumDodge,
+//     casterStrongDodge
+// ];
+
+// export default defense;

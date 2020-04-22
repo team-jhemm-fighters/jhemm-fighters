@@ -1,9 +1,9 @@
-const rogue = {
-    id: 'rogue',
-    name: 'Rogue',
+const silent = {
+    id: 'silent',
+    name: 'The Silent',
     image: '../assets/rogue.png',
-    baseHp: 5,
-    baseEnergy: 3,
+    baseHp: 13,
+    baseEnergy: 13,
 
     atkActions: [
         'action0',
@@ -23,8 +23,8 @@ const brawn = {
     id: 'brawn',
     name: 'The Brawn',
     image: '../assets/rogue.png',
-    baseHp: 5,
-    baseEnergy: 3,
+    baseHp: 18,
+    baseEnergy: 8,
 
     atkActions: [
         'action0',
@@ -44,8 +44,8 @@ const caster = {
     id: 'caster',
     name: 'The Caster',
     image: '../assets/rogue.png',
-    baseHp: 5,
-    baseEnergy: 3,
+    baseHp: 9,
+    baseEnergy: 17,
 
     atkActions: [
         'action0',
@@ -61,7 +61,7 @@ const caster = {
     ]
 };
 const classes = [
-    rogue,
+    silent,
     brawn,
     caster
 ];
