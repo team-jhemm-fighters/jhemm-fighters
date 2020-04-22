@@ -2,7 +2,7 @@ const rogue = {
     id: 'rogue',
     name: 'Rogue',
     image: '../assets/rogue.png',
-    baseHp: 15,
+    baseHp: 5,
     baseEnergy: 10,
 
     atkActions: [

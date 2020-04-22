@@ -1,5 +1,5 @@
 import { getActions, getLocalStorage, getRoundOne, findById } from '../common/utils.js';
-import { applyDamage, calculateDamage, calculateEnergy } from '../battlefield/battlefield-utils.js';
+import { applyDamage, calculateDamage, calculateEnergy, isDead } from '../battlefield/battlefield-utils.js';
 import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
 
@@ -39,9 +39,6 @@ if (turnOrder === 'player1First') {
     player1Description.textContent = player1DefenseObject.description;
     player2Description.textContent = player2AttackObject.description;
     applyDamage(player2, player1);
-
-
-    
 }
 
 const buttonLink = document.getElementById('link-button');
@@ -59,11 +56,23 @@ function setRoundTwoTrue() {
 
 buttonLink.addEventListener('click', () => {
 
+
+    const player1Dead = isDead(player1.health);
+    const player2Dead = isDead(player2.health); 
+
+    let link = '';
+    if (player1Dead || player2Dead) {
+        link = '../results.html';
+    } else {
+        link = '../interim.html';
+    }
+
     if (roundOneDone === true) {
         setRoundTwoTrue();
     }
     
     setRoundOneTrue();
 
-    location.href = '../interim.html';
+    
+    location.href = link;
 });

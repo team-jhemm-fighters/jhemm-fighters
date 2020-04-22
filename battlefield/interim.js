@@ -53,6 +53,7 @@ function turnTwo(player1, player2) {
 }
 
 function roundComplete() {
+    
     localStorage.removeItem('round1');
     localStorage.removeItem('round2');
 
