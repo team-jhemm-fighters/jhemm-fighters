@@ -1,11 +1,42 @@
-import { getActions, getLocalStorage, findById, getRoundOne, getRoundTwo } from '../common/utils.js';
+import { getActions, getLocalStorage, getRoundOne, findById } from '../common/utils.js';
+import { applyDamage, calculateDamage, calculateEnergy } from '../battlefield/battlefield-utils.js';
 import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
-const buttonLink = document.getElementById('link-button');
 
-const actions = getActions();
+
+const player1Move = document.getElementById('player1Move');
+const player2Move = document.getElementById('player2Move');
+const player1Description = document.getElementById('player1Description');
+const player2Description = document.getElementById('player2Description');
+const finalStats = document.getElementById('finalStats');
+
+const roundOneDone = getRoundOne();
+
 const player1 = getLocalStorage('player1');
 const player2 = getLocalStorage('player2');
+const player1AttackObject = findById(attacks, player1.attackId);
+const player2DefenseObject = findById(defense, player2.defendId);
+const player1DefenseObject = findById(defense, player1.defendId);
+const player2AttackObject = findById(attacks, player2.attackId);
+
+
+if (!roundOneDone) {
+    player1Move.textContent = player1AttackObject.name;
+    player2Move.textContent = player2DefenseObject.name;
+    player1Description.textContent = player1AttackObject.description;
+    player2Description.textContent = player2DefenseObject.description;
+    applyDamage(player1, player2);
+} else {
+    player1Move.textContent = player1DefenseObject.name;
+    player2Move.textContent = player2AttackObject.name;
+    player1Description.textContent = player1DefenseObject.description;
+    player2Description.textContent = player2AttackObject.description;
+    applyDamage(player2, player1);
+
+}
+
+const buttonLink = document.getElementById('link-button');
+
 
 function setRoundOneTrue() {
     const temp = JSON.stringify(true);
@@ -19,7 +50,6 @@ function setRoundTwoTrue() {
 
 buttonLink.addEventListener('click', () => {
 
-    const roundOneDone = getRoundOne();
 
     if (roundOneDone === true) {
         setRoundTwoTrue();
@@ -29,31 +59,3 @@ buttonLink.addEventListener('click', () => {
 
     location.href = '../interim.html';
 });
-
-export function renderBattlefield(a, b) {
-
-    if (actions.length === 2) {
-        const damageDone = calculateDamage(player1.attackId, player2.defendId);
-    } else if (actions.length === 4) {
-
-    }
-    
-}
-
-
-export function calculateDamage(attackAction, defendAction) {
-    let damageNum = 0;
-    const attackObject = findById(attacks, attackAction);
-    const defendObject = findById(defense, defendAction);
-
-    const randomNum = Math.ceil(Math.random() * 10);
-
-    const hitChance = attackObject.minEffectiveRoll + defendObject.defenseRating;
-
-    if (hitChance < randomNum) {
-        // attack hits
-        damageNum = attackObject.damage;
-    }
-    
-    return damageNum;
-}

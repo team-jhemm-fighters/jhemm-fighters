@@ -1,5 +1,5 @@
 const casterHealingLight = {
-    id: 'healinglight',
+    id: 'action1',
     name: 'Healing Light',
     description: 'You call out to your arcane powers to heal your wounds and protect you from harm.',
     defenseRating: 1,
@@ -8,7 +8,7 @@ const casterHealingLight = {
 };
 
 const casterFrostShield = {
-    id: 'frostshield',
+    id: 'action2',
     name: 'Frost Shield',
     description: 'You surround yourself with a barrier made of frost.',
     defenseRating: 3,
@@ -17,7 +17,7 @@ const casterFrostShield = {
 };
 
 const casterLightningDodge = {
-    id: 'lightningdodge',
+    id: 'action3',
     name: 'Lightning Dodge',
     description: 'You send lightning through your body to dodge out of the way.',
     defenseRating: 1,
