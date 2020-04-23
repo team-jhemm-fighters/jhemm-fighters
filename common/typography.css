@@ -50,8 +50,6 @@ button, input[type="submit"]:not(.big-button), input[type="text"] {
     font-size: 1em;
 }
 
-
-
 .big-button {
     font-size: 2em;
 }
