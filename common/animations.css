@@ -1,0 +1,52 @@
+@keyframes slidefromleft {
+    from { opacity: 0; right: 100%; }
+    to { opacity: 100%; right: 0px; }
+}
+
+@keyframes slidefromright {
+    from { opacity: 0; left: 100%; }
+    to { opacity: 100%; left: 0px; }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 100%; }
+}
+
+.slide-from-left {
+    /* ensures object is hidden until animated */
+    opacity: 0;
+    /* ensures animated element can be moved */
+    position: relative;
+
+    animation-name: slidefromleft;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    
+    /* keeps animated element at ending opacity and position */
+    animation-fill-mode: forwards;
+}
+
+.slide-from-right {
+    /* ensures object is hidden until animated */
+    opacity: 0;
+    /* ensures animated element can be moved */
+    position: relative;
+
+    animation-name: slidefromright;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+
+    /* keeps animated element at ending opacity and position */
+    animation-fill-mode: forwards;
+}
+
+.fade-in {
+    /* ensures object is hidden until animated */
+    opacity: 0;
+
+    animation-name: fadein;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
