@@ -27,17 +27,17 @@ let link = '/interim.html';
 // Conditional Turn Logic lasts until round reset
 if (turnPattern === 'player1First') {
     if (!turnOneComplete) {
-        turnOne(player1, player2);
+        turn(player1, player2);
     } else if (turnOneComplete && !turnTwoComplete) {
-        turnTwo(player1, player2);
+        turn(player2, player1);
     } else {
         roundComplete();
     }
 } else {
     if (!turnOneComplete) {
-        turnOne(player2, player1);
+        turn(player2, player1);
     } else if (turnOneComplete && !turnTwoComplete) {
-        turnTwo(player2, player1);
+        turn(player1, player2);
     } else {
         roundComplete();
     }
@@ -45,46 +45,30 @@ if (turnPattern === 'player1First') {
 // Link gets updated in conditional turn logic
 navigateButton.addEventListener('click', () => {
     location.href = '/jhemm-fighters' + link;
+    //location.href = link;
+    
 });
 
 
-function turnOne(player1, player2) {
-    //change to better variable names i.e. player1 = firstPlayer
+
+function turn(attacker, defender) {
+    //change to better variable names i.e. attacker = firstPlayer
     //player 1 chooses attack
-    if (!player1.hasAttacked) {
-        nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
-        navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
-        link = '/player.html?id=' + player1.id + '&turn=attack';
+    if (!attacker.hasAttacked) {
+        nextPlayerSpan.textContent = 'The next action will be done by ' + attacker.name + '. Pass the device to them before continuing!';
+        navigateButton.textContent = 'Go to ' + attacker.name + '\'s turn';
+        link = '/player.html?id=' + attacker.id + '&turn=attack';
       
         //player 2 chooses defense
-    } else if (player1.hasAttacked === true && player2.hasDefended === false) {
-        nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
-        navigateButton.textContent = 'Go to ' + player2.name + '\'s turn';
-        link = '/player.html?id=' + player2.id + '&turn=defend';
+    } else if (attacker.hasAttacked && !defender.hasDefended) {
+        nextPlayerSpan.textContent = 'The next action will be done by ' + defender.name + '. Pass the device to them before continuing!';
+        navigateButton.textContent = 'Go to ' + defender.name + '\'s turn';
+        link = '/player.html?id=' + defender.id + '&turn=defend';
     } else {
         //battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
-        navigateButton.textContent = 'Go to: Battle 1a';
+        navigateButton.textContent = 'Go to: Battle';
         link = '/battlefield.html';
-    }
-}
-
-function turnTwo(player1, player2) {
-    if (!player2.hasAttacked) {
-        nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
-        navigateButton.textContent = 'Go to ' + player2.name + '\'s turn';
-        link = '/player.html?id=' + player2.id + '&turn=attack';
-        //player 2 chooses defense
-    } else if (player2.hasAttacked === true && player1.hasDefended === false) {
-        nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
-        navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
-        link = '/player.html?id=' + player1.id + '&turn=defend';
-    } else {
-        //battle screen
-        nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
-        navigateButton.textContent = 'Go to: Battle final this round';
-        link = '/battlefield.html';
-        
     }
 }
 
