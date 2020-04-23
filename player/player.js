@@ -24,21 +24,18 @@ const currentTurn = searchParams.get('turn');
 
 let currentPlayer = player1;
 let opposingPlayer = player2;
+
 if (playerId === 'player2') {
     currentPlayer = player2;
     opposingPlayer = player1;
 }
 
 const chosenClass = findById(classes, currentPlayer.class);
+
 let actions;
 let actionsArray;
-if (currentTurn === 'attack') {
-    actions = attacks;
-    actionsArray = 'atkActions';
-} else {
-    actions = defenses;
-    actionsArray = 'defActions';
-}
+
+determineTurn();
 
 player1name.textContent = currentPlayer.name;
 player1health.textContent = currentPlayer.health;
@@ -71,6 +68,19 @@ button.addEventListener('click', () => {
 
     window.location.href = './interim.html';
 });
+
+function determineTurn() {
+    if (currentTurn === 'attack') {
+        actions = attacks;
+        actionsArray = 'atkActions';
+        button.textContent = 'Place your Attack';
+    }
+    else {
+        actions = defenses;
+        actionsArray = 'defActions';
+        button.textContent = 'Ready your Defense';
+    }
+}
 
 function createAction(action) {
     const label = document.createElement('label');

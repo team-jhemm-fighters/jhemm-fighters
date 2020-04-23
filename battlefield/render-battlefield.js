@@ -1,5 +1,6 @@
 import { getLocalStorage, getTurnOne, findById } from '../common/utils.js';
 import { applyDamage, isDead } from '../battlefield/battlefield-utils.js';
+import { roundComplete } from './battlefield-utils.js';
 import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
 
@@ -87,7 +88,8 @@ buttonLink.addEventListener('click', () => {
     }
 
     if (roundOneDone === true) {
-        setRoundTwoTrue();
+        
+        roundComplete(player1, player2);
     }
     
     setRoundOneTrue();
@@ -101,10 +103,6 @@ buttonLink.addEventListener('click', () => {
 function setRoundOneTrue() {
     const temp = JSON.stringify(true);
     localStorage.setItem('round1', temp);
-}
-function setRoundTwoTrue() {
-    const temp = JSON.stringify(true);
-    localStorage.setItem('round2', temp);
 }
 
 // here's a very basic renderStats() function, to get refactoring started
