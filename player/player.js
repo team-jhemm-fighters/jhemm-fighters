@@ -16,10 +16,6 @@ console.log(currentTurn);
 
 playername.textContent = currentPlayer.name;
 
-// generate elements dynamically based on currentPlayer and currentTurn
-// currentPlayer for moveset & stats
-// 
-
 const chosenClass = findById(classes, currentPlayer.class);
 let actions;
 let actionsArray;

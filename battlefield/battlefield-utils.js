@@ -40,7 +40,7 @@ export function calculateDamage(attackAction, defendAction) {
 
     const hitChance = attackObject.minEffectiveRoll + defendObject.defenseRating;
 
-    if (hitChance < randomNum) {
+    if (hitChance <= randomNum) {
         // attack hits
         damageNum = attackObject.damage;
     }
