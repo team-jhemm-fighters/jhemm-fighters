@@ -1,0 +1,27 @@
+#character-selector header {
+    margin-block-end: 2em;
+}
+
+#character-selector label {
+    width: 10vw;
+}
+
+#character-selector label p:first-of-type {
+    font-weight: bold;
+}
+
+#character-selector input[type="radio"] {
+    display: none;
+}
+
+#character-selector img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    filter: grayscale();
+}
+
+#character-selector input[type="radio"]:checked + img {
+    border: 5px solid var(--accent-extra-light);
+    filter: none;
+}

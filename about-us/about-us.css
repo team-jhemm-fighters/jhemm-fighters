@@ -1,0 +1,15 @@
+#bios {
+    padding: 2.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#bios li {
+    padding: 1em;
+    border: 1px solid var(--accent-extra-light);
+    width: 20vw;
+    min-width: 400px;
+    margin: 1em 1em;
+}
