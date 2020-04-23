@@ -63,28 +63,26 @@ if (turnOrder === 'player1First') {
     player2Move.textContent = `${player2.name} defended with ${player2DefenseObject.name}.`;
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
-    // calling renderStats() with other textContent manipulations, for clarity
-    renderStats();
-
+    
     const arrayDamage = applyDamage(player1, player2);
     const randomRollNumber = arrayDamage[0];
     const numberNeeded = arrayDamage[2];
     const damageDealt = arrayDamage[1];
     finalStats.textContent = 'The number the attacker rolled was ' + randomRollNumber + ', and they needed ' + numberNeeded + ' to hit. The defender took ' + damageDealt + ' damage.';
+    renderStats();
 
 } else {
     player1Move.textContent = `${player1.name} defended with ${player1DefenseObject.name}.`;
     player2Move.textContent = `${player2.name} used ${player2AttackObject.name} against ${player1.name}!`;
     player1Description.textContent = player1DefenseObject.description;
     player2Description.textContent = player2AttackObject.description;
-    // calling renderStats() with other textContent manipulations, for clarity
-    renderStats();
-
+    
     const arrayDamage = applyDamage(player2, player1);
     const randomRollNumber = arrayDamage[0];
     const numberNeeded = arrayDamage[2];
     const damageDealt = arrayDamage[1];
     finalStats.textContent = 'The number the attacker rolled was ' + randomRollNumber + ', and they needed ' + numberNeeded + ' to hit. The defender took ' + damageDealt + ' damage.';
+    renderStats();
 }
 
 const buttonLink = document.getElementById('link-button');
