@@ -31,30 +31,7 @@ const silentDodge = {
     health: 0,
     energyReq: 1
 };
-const casterHealingLight = {
-    id: 'action7',
-    name: 'Healing Light',
-    description: 'You call out to your arcane powers to heal your wounds and protect you from harm.',
-    defenseRating: 1,
-    health: 2,
-    energyReq: 2
-};
-const casterFrostShield = {
-    id: 'action8',
-    name: 'Frost Shield',
-    description: 'You surround yourself with a barrier made of frost.',
-    defenseRating: 3,
-    health: 0,
-    energyReq: 5
-};
-const casterLightningDodge = {
-    id: 'action9',
-    name: 'Lightning Dodge',
-    description: 'You send lightning through your body to dodge out of the way.',
-    defenseRating: 1,
-    health: 0,
-    energyReq: 1
-};
+
 const brawnUnstoppable = {
     id: 'action4',
     name: 'Unstoppable',
@@ -79,6 +56,31 @@ const brawnRaiseShield = {
     health: 0,
     energyReq: 2
 };
+const casterHealingLight = {
+    id: 'action7',
+    name: 'Healing Light',
+    description: 'You call out to your arcane powers to heal your wounds and protect you from harm.',
+    defenseRating: 1,
+    health: 2,
+    energyReq: 2
+};
+const casterFrostShield = {
+    id: 'action8',
+    name: 'Frost Shield',
+    description: 'You surround yourself with a barrier made of frost.',
+    defenseRating: 3,
+    health: 0,
+    energyReq: 5
+};
+const casterLightningDodge = {
+    id: 'action9',
+    name: 'Lightning Dodge',
+    description: 'You send lightning through your body to dodge out of the way.',
+    defenseRating: 1,
+    health: 0,
+    energyReq: 1
+};
+
 const defense = [
     recoverEnergy,
     silentDodge,
