@@ -2,7 +2,7 @@ const silent = {
     id: 'silent',
     name: 'The Silent',
     image: '../assets/rogue.png',
-    baseHp: 1,
+    baseHp: 13,
     baseEnergy: 13,
 
     atkActions: [
