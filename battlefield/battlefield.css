@@ -1,3 +1,60 @@
+/* 
+animations:
+
+slide-from-left
+slide-from-right
+fade-in
+*/
+
+@keyframes slidefromleft {
+    from { opacity: 0; right: 100%; }
+    to { opacity: 100%; right: 0px; }
+}
+
+@keyframes slidefromright {
+    from { opacity: 0; left: 100%; }
+    to { opacity: 100%; left: 0px; }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 100%; }
+}
+
+.slide-from-left {
+    /* ensures object is hidden until animated */
+    opacity: 0;
+    /* necessary for animation */
+    position: relative;
+
+    animation-name: slidefromleft;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.slide-from-right {
+    /* ensures object is hidden until animated */
+    opacity: 0;
+    /* necessary for animation */
+    position: relative;
+
+    animation-name: slidefromright;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.fade-in {
+    /* ensures object is hidden until animated */
+    opacity: 0;
+
+    animation-name: fadein;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
 #player-1-image, #player-2-image {
     height: 40vh;
     object-fit: cover;
@@ -18,8 +75,13 @@
     margin: 1em auto;
 }
 
+#action-2-image {
+    animation-delay: 2s;
+}
+
 #battle-outcome {
     position: absolute;
     color: var(--main-bg-color);
     padding: 0 1em;
+    animation-delay: 3s;
 }
