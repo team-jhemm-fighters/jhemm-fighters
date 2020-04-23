@@ -1,3 +1,10 @@
+
+
+#player-1-image, #player-2-image {
+    height: 40vh;
+    object-fit: cover;
+}
+
 #player-stats article {
     width: 100%;
 }

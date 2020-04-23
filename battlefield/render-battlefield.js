@@ -4,10 +4,12 @@ import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
 
 // DOM elements for updated stat rendering, identical to elements/variables used on player page -- can probably be refactored along with player page dom manipulation into a renderStats() utility of some kind
+const player1image = document.getElementById('player-1-image');
 const player1name = document.getElementById('player-1-name');
 const player1health = document.getElementById('player-1-health');
 const player1energy = document.getElementById('player-1-energy');
 
+const player2image = document.getElementById('player-2-image');
 const player2name = document.getElementById('player-2-name');
 const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
@@ -112,10 +114,12 @@ function setRoundTwoTrue() {
 
 // here's a very basic renderStats() function, to get refactoring started
 function renderStats() {
+    player1image.src = player1.image;
     player1name.textContent = player1.name;
     player1health.textContent = player1.health;
     player1energy.textContent = player1.energy;
 
+    player2image.src = player2.image;
     player2name.textContent = player2.name;
     player2health.textContent = player2.health;
     player2energy.textContent = player2.energy;
