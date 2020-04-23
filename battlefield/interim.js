@@ -2,6 +2,7 @@ import { getLocalStorage, getRoundOne, getRoundTwo, setPlayerProfile } from '../
 import { turnOrder } from '../battlefield/battlefield-utils.js';
 
 const navigateButton = document.getElementById('navigate-button');
+const nextPlayerSpan = document.getElementById('next-player-span');
 const player1 = getLocalStorage('player1');
 const player2 = getLocalStorage('player2');
 
@@ -23,14 +24,17 @@ function turnOne(player1, player2) {
     //change to better variable names i.e. player1 = firstPlayer
     //player 1 chooses attack
     if (!player1.hasAttacked) {
-        navigateButton.textContent = 'Go to: ' + player1.name;
+        nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
+        navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
         link = '../player.html?id=' + player1.id + '&turn=attack';
         //player 2 chooses defense
     } else if (player1.hasAttacked === true && player2.hasDefended === false) {
-        navigateButton.textContent = 'Go to: ' + player2.name;
+        nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
+        navigateButton.textContent = 'Go to ' + player2.name + '\'s turn';
         link = '../player.html?id=' + player2.id + '&turn=defend';
     } else {
         //battle screen
+        nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
         navigateButton.textContent = 'Go to: Battle 1a';
         link = '../battlefield.html';
     }
@@ -38,14 +42,17 @@ function turnOne(player1, player2) {
 
 function turnTwo(player1, player2) {
     if (!player2.hasAttacked) {
-        navigateButton.textContent = 'Go to: ' + player2.name;
+        nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
+        navigateButton.textContent = 'Go to ' + player2.name + '\'s turn';
         link = '../player.html?id=' + player2.id + '&turn=attack';
         //player 2 chooses defense
     } else if (player2.hasAttacked === true && player1.hasDefended === false) {
-        navigateButton.textContent = 'Go to: ' + player1.name;
+        nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
+        navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
         link = '../player.html?id=' + player1.id + '&turn=defend';
     } else {
         //battle screen
+        nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
         navigateButton.textContent = 'Go to: Battle final this round';
         link = '../battlefield.html';
         
