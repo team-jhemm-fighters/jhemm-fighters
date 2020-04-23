@@ -18,29 +18,29 @@ export function getLocalStorage(string) {
     return data;
 }
 
-export function setActions(action) {
-    const temp = getActions();
-    temp.push(action);
-    const stringytemp = JSON.stringify(temp);
-    localStorage.setItem('actions', stringytemp);
+// export function setActions(action) {
+//     const temp = getActions();
+//     temp.push(action);
+//     const stringytemp = JSON.stringify(temp);
+//     localStorage.setItem('actions', stringytemp);
 
-}
+// }
 
-export function getActions() {
-    const item = localStorage.getItem('actions');
-    let temp = JSON.parse(item);
-    if (!temp) {
-        temp = [];   
-    }
-    return temp;
-}
+// export function getActions() {
+//     const item = localStorage.getItem('actions');
+//     let temp = JSON.parse(item);
+//     if (!temp) {
+//         temp = [];   
+//     }
+//     return temp;
+// }
 
-export function getRoundOne() {
+export function getTurnOne() {
     const temp = localStorage.getItem('round1');
     const data = JSON.parse(temp);
     return data;
 }
-export function getRoundTwo() {
+export function getTurnTwo() {
     const temp = localStorage.getItem('round2');
     const data = JSON.parse(temp);
     return data;
