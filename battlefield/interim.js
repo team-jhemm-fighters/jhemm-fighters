@@ -67,7 +67,7 @@ function turn(attacker, defender) {
     } else {
         //battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
-        navigateButton.textContent = 'Go to: Battle';
+        navigateButton.textContent = 'Go to this rounds battle!';
         link = '/battlefield.html';
     }
 }
