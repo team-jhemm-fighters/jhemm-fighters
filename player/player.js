@@ -21,7 +21,13 @@ const player2energy = document.getElementById('player-2-energy');
 const searchParams = new URLSearchParams(window.location.search);
 const playerId = searchParams.get('id');
 const currentTurn = searchParams.get('turn');
-const currentPlayer = getLocalStorage(playerId);
+
+let currentPlayer = player1;
+let opposingPlayer = player2;
+if (playerId === 'player2') {
+    currentPlayer = player2;
+    opposingPlayer = player1;
+}
 
 const chosenClass = findById(classes, currentPlayer.class);
 let actions;
@@ -34,13 +40,13 @@ if (currentTurn === 'attack') {
     actionsArray = 'defActions';
 }
 
-player1name.textContent = player1.name;
-player1health.textContent = player1.health;
-player1energy.textContent = player1.energy;
+player1name.textContent = currentPlayer.name;
+player1health.textContent = currentPlayer.health;
+player1energy.textContent = currentPlayer.energy;
 
-player2name.textContent = player2.name;
-player2health.textContent = player2.health;
-player2energy.textContent = player2.energy;
+player2name.textContent = opposingPlayer.name;
+player2health.textContent = opposingPlayer.health;
+player2energy.textContent = opposingPlayer.energy;
 
 
 for (let i = 0; i < chosenClass[actionsArray].length; i++) {
