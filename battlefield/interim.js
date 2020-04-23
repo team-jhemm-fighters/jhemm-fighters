@@ -44,7 +44,7 @@ if (turnPattern === 'player1First') {
 }
 // Link gets updated in conditional turn logic
 navigateButton.addEventListener('click', () => {
-    location.href = link;
+    location.href = '/jhemm-fighters' + link;
 });
 
 
