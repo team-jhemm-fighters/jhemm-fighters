@@ -6,12 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./common/style.css">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
+    <link rel="stylesheet" href="./splash/splash.css">
+    <title>Jhemm Fighters | Welcome!</title>
 </head>
 
 <body>
-    splash is working
+    
+    <!-- wrapper for the page content, to keep centering and scaling consistent -->
+    <div class="page-wrapper two-column-grid">
+
+        <section class="flex-column bordered-box main-bg">
+            
+            <header class="centered-text">
+                <h1 class="logo">Jhemm Fighters</h1>
+            </header>
+
+            <article class="centered-text">
+                
+                <p>
+                    Welcome to Jhemm Fighters!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum autem itaque provident at sit libero quas odit nesciunt, dolore aliquam recusandae excepturi illum impedit veniam soluta obcaecati, quia fugiat est!
+                </p>
+                
+                <h2>How to play</h2>
+                
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nostrum unde consequuntur, earum adipisci, at ut amet, obcaecati omnis eaque quod provident officiis officia suscipit explicabo voluptatibus aspernatur aperiam numquam.
+                </p>
+
+            </article>
+
+            <form action="./character-creation.html">
+                <input class="big-button" type="submit" value="Start Game" />
+            </form>
+
+            <form action="./about-us.html">
+                <input type="submit" value="Who made this?" />
+            </form>
+
+        </section>
+
+        <section class="flex-column accent-bg">
+
+            <img class="stacked-image circle-image" src="./assets/rogue.png" alt="Image of a Rogue fighter" />
+
+            <img class="stacked-image circle-image" src="./assets/rogue.png" alt="Image of a Rogue fighter" />
+
+            <img class="stacked-image circle-image" src="./assets/rogue.png" alt="Image of a Rogue fighter" />
+
+        </section>
+
+    </div>
+
     <script type="module" src="./splash/splash.js"></script>
 </body>
 

@@ -1,0 +1,117 @@
+@import './typography.css';
+
+@import './colors.css';
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* layout & arrangement */
+
+body {
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    grid-template-rows: 5vh 1fr 5vh;
+    height: 100%;
+    width: 100%;
+}
+
+.page-wrapper {
+    justify-content: center;
+    align-content: center;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 2em;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+article {
+    margin: 1em auto;
+}
+
+button, input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+}
+
+/* borders, padding, colors, etc. */
+
+/*
+variables:
+    --main-bg-color
+    --accent-light
+    --accent-medium
+    --accent-medium-dark
+    --accent-dark
+*/
+
+body {
+    background-color: var(--main-bg-color);
+    background-image: url('../assets/main-bg.jpg');
+    color: var(--accent-dark);
+}
+
+section {
+    padding: 2.5em;
+}
+
+button, input[type="submit"] {
+    border: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--main-bg-color);
+    background-color: var(--accent-light);
+}
+
+.no-bullets {
+    list-style-type: none;
+    margin-inline-start: 0;
+}
+
+.circle-image {
+    border-radius: 50%;
+}
+
+.bordered-box {
+    border: 1px solid var(--accent-extra-light);
+}
+
+.main-bg {
+    background-color: var(--main-bg-color);
+}
+
+.accent-bg {
+    background-color: var(--accent-extra-light);
+}
+
+.logo {
+    color: var(--accent-medium);
+}

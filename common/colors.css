@@ -1,0 +1,11 @@
+/* color variables */
+
+:root {
+    --main-bg-color: #E7E6E0;
+    --accent-extra-light: #A57A99;
+    --accent-light: #2C8DA3;
+    --accent-medium: #701020;
+    --accent-medium-dark: #330036;
+    --accent-dark: #330036;
+}
+
