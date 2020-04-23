@@ -1,7 +1,7 @@
 const silent = {
     id: 'silent',
     name: 'The Silent',
-    image: '../assets/rogue.png',
+    image: '../assets/silent1.jpg',
     baseHp: 13,
     baseEnergy: 13,
 
@@ -22,7 +22,7 @@ const silent = {
 const brawn = {
     id: 'brawn',
     name: 'The Brawn',
-    image: '../assets/rogue.png',
+    image: '../assets/brawn1.jpg',
     baseHp: 18,
     baseEnergy: 8,
 
@@ -43,7 +43,7 @@ const brawn = {
 const caster = {
     id: 'caster',
     name: 'The Caster',
-    image: '../assets/rogue.png',
+    image: '../assets/caster1.jpg',
     baseHp: 9,
     baseEnergy: 17,
 
