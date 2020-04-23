@@ -1,0 +1,25 @@
+#character-selector header {
+    margin-block-end: 2em;
+}
+
+#character-selector label {
+    width: 10vw;
+}
+
+#character-selector label p:first-of-type {
+    font-weight: bold;
+}
+
+#character-selector input[type="radio"] {
+    display: none;
+}
+
+#character-selector input[type="radio"] {
+    display: none;
+}
+
+#character-selector img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}

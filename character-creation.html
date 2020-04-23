@@ -7,46 +7,108 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./common/style.css">
     <link rel="stylesheet" href="./character-creation/character-creation.css">
-    <title>Document</title>
+    <title>Jhemm Fighters | Create Characters</title>
 </head>
 
 <body>
-    <form id="character-selector">
-        <div id="player-1">
-            <label id="silent">
-                <img id="silentPicture" src="./assets/rogue.png">
-                <input type="radio" name="class1" value="silent">
-            </label>
-            <label id="brawn">
-                <img id="brawnPicture" src="./assets/rogue.png">
-                <input type="radio" name="class1" value="brawn">
 
-            </label>
-            <label id="caster">
-                <img id="casterPicture" src="./assets/rogue.png">
-                <input type="radio" name="class1" value="caster">
-            </label>
-            
-            <input name="player1name" id="player1name" type="text">
-        </div>
-        <div id="player-2">
-            <label id="silent">
-                <img id="silentPicture" src="./assets/rogue.png">
-                <input type="radio" name="class2" value="silent">
-            </label>
-            <label id="brawn">
-                <img id="brawnPicture" src="./assets/rogue.png">
-                <input type="radio" name="class2" value="brawn">
-            </label>
-            <label id="caster">
-                <img id="casterPicture" src="./assets/rogue.png">
-                <input type="radio" name="class2" value="caster">
-            </label>
+    <div class="page-wrapper">
 
-            <input name="player2name" id="player2name" type="text">
-        </div>
+        <header>
+            <h1 class="logo">Jhemm Fighters</h1>
+        </header>
+        
+        <form id="character-selector" class="centered-text">
+            <header class="bordered-box main-bg">
+                <h1>Create your characters!</h1>
+            </header>
+
+            <div class="two-column-grid"> <!-- to achieve grid columns without messing with form structure -->
+
+                <section id="player-1" class="bordered-box main-bg">
+
+                    <h1>Player 1</h1>
+
+                    <h3>Character name:</h3>
+                    <input name="player1name" id="player1name" type="text">
+                    
+                    <h3>Character class:</h3>
+
+                    <div class="flex-row">
+                        <label id="silent">
+                            <p>The Silent</p>
+                            <input type="radio" name="class1" value="silent">
+                            <img class="circle-image" id="silentPicture" src="./assets/rogue.png">
+                            <p>
+                                Description. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </label>
+                        <label id="brawn">
+                            <p>The Brawn</p>
+                            <input type="radio" name="class1" value="brawn">
+                            <img class="circle-image" id="brawnPicture" src="./assets/rogue.png">
+                            <p>
+                                Description. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </label>
+                        <label id="caster">
+                            <p>The Caster</p>
+                            <input type="radio" name="class1" value="caster">
+                            <img class="circle-image" id="casterPicture" src="./assets/rogue.png">
+                            <p>
+                                Description. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </label>
+                    </div> <!-- end flex-wrapper -->
+                
+                </section>
+
+                <section id="player-2" class="bordered-box main-bg">
+
+                    <h1>Player 2</h1>
+
+                    <h3>Character name:</h3>
+                    <input name="player2name" id="player2name" type="text">
+
+                    <h3>Character class:</h3>
+
+                    <div class="flex-row">
+                        <label id="silent">
+                            <p>The Silent</p>
+                            <input type="radio" name="class2" value="silent">
+                            <img class="circle-image" id="silentPicture" src="./assets/rogue.png">
+                            <p>
+                                Description. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </label>
+                        <label id="brawn">
+                            <p>The Brawn</p>
+                            <input type="radio" name="class2" value="brawn">
+                            <img class="circle-image" id="brawnPicture" src="./assets/rogue.png">
+                            <p>
+                                Description. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </label>
+                        <label id="caster">
+                            <p>The Caster</p>
+                            <input type="radio" name="class2" value="caster">
+                            <img class="circle-image" id="casterPicture" src="./assets/rogue.png">
+                            <p>
+                                Description. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </label>
+                    </div> <!-- end flex-wrapper -->
+
+                </section>
+
+        </div> <!-- end grid wrapper -->
+
         <button>Let's Battle!</button>
     </form>
+
+    </div>
+    <!-- end page container -->
+
     <script type="module" src="./character-creation/character-creation.js"></script>
 </body>
 
