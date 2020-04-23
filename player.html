@@ -12,7 +12,16 @@
 
 <body>
     <div>
-        <p id="name"></p>
+        <div class="player-1-container">
+            <p id="player-1-name"></p>
+            <p id="player-1-health"></p>
+            <p id="player-1-energy"></p>
+        </div>
+        <div class="player-2-container">
+            <p id="player-2-name"></p>
+            <p id="player-2-health"></p>
+            <p id="player-2-energy"></p>
+        </div>
         <form id="action-form">
             <p id="actions"></p>
         </form>
@@ -21,7 +30,6 @@
         <input type="radio" name="action" value="action3" id="3"> -->
     </div>
     <button id="submit-action">I'm placing my attack or defense!</button>
-    player is working
     <script type="module" src="./player/player.js"></script>
 </body>
 
