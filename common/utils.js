@@ -5,8 +5,6 @@ export function findById(array, id) {
             return item;
         }
     }
-
-    // return null;
 }
 
 export function setPlayerProfile(string, object) {
