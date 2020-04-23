@@ -69,7 +69,7 @@ button.addEventListener('click', () => {
     setPlayerProfile(playerId, currentPlayer);
     setActions(selectedAction.value);
 
-    window.location.href = '../interim.html';
+    window.location.href = '../jhemm-fighters/interim.html';
 });
 
 function createAction(action) {
