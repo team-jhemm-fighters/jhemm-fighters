@@ -1,4 +1,4 @@
-import { getLocalStorage, setActions, setPlayerProfile, findById } from '../common/utils.js';
+import { getLocalStorage, setPlayerProfile, findById } from '../common/utils.js';
 import classes from '../data/classes.js';
 import attacks from '../data/attack.js';
 import defenses from '../data/defense.js';
@@ -67,9 +67,9 @@ button.addEventListener('click', () => {
         currentPlayer.defendId = selectedAction.value;
     }
     setPlayerProfile(playerId, currentPlayer);
-    setActions(selectedAction.value);
+    // setActions(selectedAction.value);
 
-    window.location.href = '../interim.html';
+    window.location.href = './interim.html';
 });
 
 function createAction(action) {
