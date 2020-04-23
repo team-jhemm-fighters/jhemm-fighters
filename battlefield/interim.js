@@ -64,7 +64,7 @@ function turnOne(player1, player2) {
     } else {
         //battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
-        navigateButton.textContent = 'Go to: Battle 1a';
+        navigateButton.textContent = 'Go to the first battle for this round!';
         link = '/battlefield.html';
     }
 }
@@ -82,7 +82,7 @@ function turnTwo(player1, player2) {
     } else {
         //battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
-        navigateButton.textContent = 'Go to: Battle final this round';
+        navigateButton.textContent = 'Go to the second battle for this round!';
         link = '/battlefield.html';
         
     }
