@@ -14,12 +14,14 @@
     display: none;
 }
 
-#character-selector input[type="radio"] {
-    display: none;
+#character-selector img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    filter: grayscale();
 }
 
-#character-selector img {
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
+#character-selector input[type="radio"]:checked + img {
+    border: 5px solid var(--accent-extra-light);
+    filter: none;
 }

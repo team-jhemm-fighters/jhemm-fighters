@@ -85,6 +85,7 @@ section {
 
 button, input[type="submit"] {
     border: 0px;
+    border: 2px solid var(--main-bg-color);
     border-radius: 10px;
     padding: 10px;
     color: var(--main-bg-color);
