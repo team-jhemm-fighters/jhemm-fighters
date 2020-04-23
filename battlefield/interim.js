@@ -11,22 +11,13 @@ let turnTwoComplete = false;
 turnOneComplete = getTurnOne();
 
 if (!player1.hasAttacked && !player2.hasAttacked) {
-    
     turnOrder();
 }
 
 // Get Player Data from Local Storage
 const turnPattern = getLocalStorage('TURN-PATTERN');
 
-// At the start of a round both turns should be false
-
-
-// if (turnTwoComplete) {
-//     roundComplete();
-// }
-
 let link = '/interim.html';
-
 
 // Conditional Turn Logic lasts until round reset
 if (turnPattern === 'player1First') {
@@ -44,53 +35,28 @@ if (turnPattern === 'player1First') {
 }
 // Link gets updated in conditional turn logic
 navigateButton.addEventListener('click', () => {
+    // to make work on github pages
     location.href = '/jhemm-fighters' + link;
+    // to make work locally
     // location.href = link;
-    
 });
 
-
-
 function turn(attacker, defender) {
-    //change to better variable names i.e. attacker = firstPlayer
-    //player 1 chooses attack
+    // if attacker hasn't attacked show options
     if (!attacker.hasAttacked) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + attacker.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + attacker.name + '\'s turn';
         link = '/player.html?id=' + attacker.id + '&turn=attack';
       
-        //player 2 chooses defense
+        // if attacker has attacked and defender hasn't defended show defense options
     } else if (attacker.hasAttacked && !defender.hasDefended) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + defender.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + defender.name + '\'s turn';
         link = '/player.html?id=' + defender.id + '&turn=defend';
     } else {
-        //battle screen
+        // battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
         navigateButton.textContent = 'Go to this rounds battle!';
         link = '/battlefield.html';
     }
 }
-
-// function roundComplete() {
-   
-//     localStorage.removeItem('round1');
-//     localStorage.removeItem('round2');
-
-//     player1.hasAttacked = false;
-//     player1.hasDefended = false;
-
-//     player2.hasDefended = false;
-//     player2.hasAttacked = false;
-
-//     player1.attackId = '';
-//     player1.defendId = '';
-
-//     player2.attackId = '';
-//     player2.defendId = '';
-
-//     setPlayerProfile('player1', player1);
-//     setPlayerProfile('player2', player2);
-
-//     turnOrder();
-// }

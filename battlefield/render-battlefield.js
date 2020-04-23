@@ -1,5 +1,5 @@
 import { getLocalStorage, getTurnOne, findById } from '../common/utils.js';
-import { applyDamage, isDead } from '../battlefield/battlefield-utils.js';
+import { applyBattleResults, isDead } from '../battlefield/battlefield-utils.js';
 import { roundComplete } from './battlefield-utils.js';
 import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
@@ -12,10 +12,6 @@ const player1energy = document.getElementById('player-1-energy');
 const player2name = document.getElementById('player-2-name');
 const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
-
-
-
-// continuing on with battlefield-specific DOM elements...
 
 const player1Move = document.getElementById('player1Move');
 const player2Move = document.getElementById('player2Move');
@@ -50,8 +46,7 @@ if (turnOrder === 'player1First') {
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
     
-    arrayDamage = applyDamage(player1, player2);
-    
+    arrayDamage = applyBattleResults(player1, player2);
 } else {
     const player1DefenseObject = findById(defense, player1.defendId);
     const player2AttackObject = findById(attacks, player2.attackId);
@@ -60,7 +55,7 @@ if (turnOrder === 'player1First') {
     player1Description.textContent = player1DefenseObject.description;
     player2Description.textContent = player2AttackObject.description;
     
-    arrayDamage = applyDamage(player2, player1);
+    arrayDamage = applyBattleResults(player2, player1);
 } 
 
 const randomRollNumber = arrayDamage[0];
@@ -69,34 +64,27 @@ const numberNeeded = arrayDamage[2];
 finalStats.textContent = 'The number the attacker rolled was a ' + randomRollNumber + ', and they needed a ' + numberNeeded + ' or greater to hit. The defender took ' + damageDealt + ' damage.';
 renderStats();
 
-
 const buttonLink = document.getElementById('link-button');
 
 buttonLink.addEventListener('click', () => {
-
 
     const player1Dead = isDead(player1.health);
     const player2Dead = isDead(player2.health); 
 
     let link = '';
     if (player1Dead || player2Dead) {
-
         link = '/results.html';
     } else {
         link = '/interim.html';
 
     }
-
-    if (roundOneDone === true) {
-        
+    if (roundOneDone === true) { 
         roundComplete(player1, player2);
     }
-    
     setRoundOneTrue();
-
-    
+    // to make work locally
     // location.href = link;
-
+    // to make work on github pages
     location.href = '/jhemm-fighters' + link;
 });
 
