@@ -65,7 +65,7 @@ if (turnOrder === 'player1First') {
 const randomRollNumber = arrayDamage[0];
 const damageDealt = arrayDamage[1];
 const numberNeeded = arrayDamage[2];
-finalStats.textContent = 'The number the attacker rolled was ' + randomRollNumber + ', and they needed ' + numberNeeded + ' to hit. The defender took ' + damageDealt + ' damage.';
+finalStats.textContent = 'The number the attacker rolled was a ' + randomRollNumber + ', and they needed a ' + numberNeeded + ' or greater to hit. The defender took ' + damageDealt + ' damage.';
 renderStats();
 
 
