@@ -98,7 +98,7 @@ buttonLink.addEventListener('click', () => {
     setRoundOneTrue();
 
     
-    location.href = '/jhemm-fighters' + link;
+    location.href = link;
 });
 
 function setRoundOneTrue() {
