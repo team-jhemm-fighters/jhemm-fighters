@@ -88,7 +88,7 @@ body {
 }
 
 header:not(.logo-header) {
-    margin: auto;
+    margin: 2em auto;
     width: fit-content;
     padding: 0 1em;
 }

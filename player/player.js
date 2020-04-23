@@ -68,6 +68,7 @@ button.addEventListener('click', () => {
 
 function createAction(action) {
     const label = document.createElement('label');
+    const wrapper = document.createElement('div');
     label.classList.add('action');
     const radio = document.createElement('input');
 
@@ -84,12 +85,13 @@ function createAction(action) {
     actionName.textContent = action.name;
     const actionDetails = document.createElement('p');
     if (currentTurn === 'attack') {
-        actionDetails.textContent = `Chance To Hit:  ${action.minEffectiveRoll} Damage: ${action.damage} Energy Required: ${action.energyReq}`;
+        actionDetails.textContent = `Chance To Hit:  ${action.minEffectiveRoll} | Damage: ${action.damage} | Energy Required: ${action.energyReq}`;
     } else {
-        actionDetails.textContent = `Defense Rating: ${action.defenseRating} Energy Required: ${action.energyReq}`;
+        actionDetails.textContent = `Defense Rating: ${action.defenseRating} | Energy Required: ${action.energyReq}`;
     }
     const description = document.createElement('p');
     description.textContent = action.description;
-    label.append(actionName, description, actionDetails);
+    wrapper.append(actionName, description, actionDetails);
+    label.append(wrapper);
     return label;
 }
