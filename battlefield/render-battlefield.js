@@ -79,9 +79,11 @@ buttonLink.addEventListener('click', () => {
 
     let link = '';
     if (player1Dead || player2Dead) {
-        link = './results.html';
+
+        link = '/results.html';
     } else {
-        link = './interim.html';
+        link = '/interim.html';
+
     }
 
     if (roundOneDone === true) {
@@ -91,7 +93,7 @@ buttonLink.addEventListener('click', () => {
     setRoundOneTrue();
 
     
-    location.href = link;
+    location.href = '/jhemm-fighters' + link;
 });
 
 function setRoundOneTrue() {

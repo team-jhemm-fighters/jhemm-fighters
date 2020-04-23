@@ -21,8 +21,8 @@ turnOneComplete = getTurnOne();
 // If we go to the battle field and cam
 turnTwoComplete = getTurnTwo();
 
-// Sets link to an empty string
-let link = '';
+let link = '/interim.html';
+
 
 // Conditional Turn Logic lasts until round reset
 if (turnPattern === 'player1First') {
@@ -108,4 +108,5 @@ function roundComplete() {
     setPlayerProfile('player1', player1);
     setPlayerProfile('player2', player2);
     
+
 }
