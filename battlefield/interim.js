@@ -18,7 +18,7 @@ let turnTwoComplete = false;
 turnOneComplete = getRoundOne();
 turnTwoComplete = getRoundTwo();
 
-let link = '';
+let link = '/interim.html';
 
 function turnOne(player1, player2) {
     //change to better variable names i.e. player1 = firstPlayer
