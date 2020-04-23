@@ -103,5 +103,5 @@ if (turnPattern === 'player1First') {
 }
 
 navigateButton.addEventListener('click', () => {
-    location.href = './jhemm-fighters' + link;
+    location.href = link;
 });
