@@ -26,17 +26,17 @@ function turnOne(player1, player2) {
     if (!player1.hasAttacked) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
-        link = '../player.html?id=' + player1.id + '&turn=attack';
+        link = '/player.html?id=' + player1.id + '&turn=attack';
         //player 2 chooses defense
     } else if (player1.hasAttacked === true && player2.hasDefended === false) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + player2.name + '\'s turn';
-        link = '../player.html?id=' + player2.id + '&turn=defend';
+        link = '/player.html?id=' + player2.id + '&turn=defend';
     } else {
         //battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
         navigateButton.textContent = 'Go to: Battle 1a';
-        link = '../battlefield.html';
+        link = '/battlefield.html';
     }
 }
 
@@ -44,17 +44,17 @@ function turnTwo(player1, player2) {
     if (!player2.hasAttacked) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + player2.name + '\'s turn';
-        link = '../player.html?id=' + player2.id + '&turn=attack';
+        link = '/player.html?id=' + player2.id + '&turn=attack';
         //player 2 chooses defense
     } else if (player2.hasAttacked === true && player1.hasDefended === false) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
-        link = '../player.html?id=' + player1.id + '&turn=defend';
+        link = '/player.html?id=' + player1.id + '&turn=defend';
     } else {
         //battle screen
         nextPlayerSpan.textContent = 'Both players have acted -- it\'s time to fight!';
         navigateButton.textContent = 'Go to: Battle final this round';
-        link = '../battlefield.html';
+        link = '/battlefield.html';
         
     }
 }
@@ -104,61 +104,3 @@ if (turnPattern === 'player1First') {
 navigateButton.addEventListener('click', () => {
     location.href = link;
 });
-
-
-
-
-
-
-
-
-
-// let turnCounter = 0;
-// let nextPlayer = 'player1';
-// let nextTurn = 'attack';
-// let turnComplete = false;
-// if ((player1.hasAttacked && player2.hasDefended) || (player2.hasAttacked && player1.hasDefended)){
-//     turnComplete = true;
-// }
-// if (!player1.hasAttacked && !player2.hasAttacked) {
-//     const flip = Math.random();
-//     if (flip > .5) {
-//         nextPlayer = 'player2';
-//     }
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } else if (player1.hasAttacked && !player2.hasDefended && !turnComplete) {
-//     nextPlayer = 'player2';
-//     nextTurn = 'defend';
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } else if (player2.hasAttacked && !player1.hasDefended && !turnComplete) {
-//     nextPlayer = 'player1';
-//     nextTurn = 'defend';
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } 
-// else if (actions.length === 2) {
-//     nextTurn = 'Battle 1a';
-//     nextPlayer = 'Battle 1a';
-//     navigateButton.textContent = nextTurn;
-// } 
-// else if (player1.hasAttacked && !player2.hasAttacked && turnComplete) {
-//     nextPlayer = 'player2';
-//     nextTurn = 'attack';
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } else if (player2.hasAttacked && !player1.hasAttacked && turnComplete) {
-//     nextPlayer = 'player1';
-//     nextTurn = 'attack';
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } else if (player2.hasAttacked && player1.hasAttacked && !player1.hasDefended && turnComplete) {
-//     nextPlayer = 'player1';
-//     nextTurn = 'defend';
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } else if (player2.hasAttacked && player1.hasAttacked && !player2.hasDefended && turnComplete) {
-//     nextPlayer = 'player2';
-//     nextTurn = 'defend';
-//     navigateButton.textContent = 'Go to: ' + nextPlayer;
-// } else {
-//     nextTurn = 'Final Battle';
-//     nextPlayer = 'FinalBattle';
-//     navigateButton.textContent = nextTurn;
-// }
-

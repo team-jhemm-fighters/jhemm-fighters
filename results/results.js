@@ -56,5 +56,5 @@ player2Energy.textContent = player2.energy;
 
 resetButton.addEventListener('click', () => {
     localStorage.clear();
-    window.location.href = './index.html';
+    window.location.href = 'jhemm-fighters/index.html';
 });
