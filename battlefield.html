@@ -13,53 +13,71 @@
 <body>
 
     <div class="page-wrapper">
+
+        <header class="main-bg bordered-box">
+            <h2>Player actions</h2>
+        </header>
+
+        <!-- <img src="./assets/battle-bg/craftpix-402033-free-horizontal-2d-game-backgrounds/PNG/game_background_4/game_background_4.png" alt="An illustration of the battlefield" /> -->
     
-        <section id="battleResults">
+        <section id="battleResults" class="main-bg bordered-box centered-text">
             
             <div id="first-action">
+                <h2>Action #1</h2>
                 <p id="player1Move"></p>
                 <p id="player1Description"></p>
             </div>
             
             <div id="second-action">
+                <h2>Action #2</h2>
                 <p id="player2Move"></p>
                 <p id="player2Description"></p>
             </div>
             
             <div id="battle-outcome">
+                <h2>Outcome</h2>
                 <p id="finalStats"></p>
             </div>
+
+            <div>
+                <p>The battle has finished!</p>
+            </div>
+
         </section>
 
-        <section id="player1">
-            <p id="player-1-name">
-    
-            </p>
-            <p id="player-1-health">
-    
-            </p>
-            <p id="player-1-energy">
-    
-            </p>
+        <header class="main-bg bordered-box">
+            <h2>Results from this battle</h2>
+        </header>
+
+        <section id="player-stats" class="two-column-grid">
+
+            <article id="player1" class="main-bg bordered-box centered-text">
+                <p id="player-1-name">
+        
+                </p>
+                <p>
+                    Health: <span id="player-1-health"></span>
+                </p>
+                <p>
+                    Energy: <span id="player-1-energy"></span>
+                </p>
+            </article>
+        
+            <article id="player2" class="main-bg bordered-box centered-text">
+                <p id="player-2-name">
+        
+                </p>
+                <p>
+                    Health: <span id="player-2-health"></span>
+                </p>
+                <p>
+                    Energy: <span id="player-2-energy"></span>
+                </p>
+            </article>
+
         </section>
-    
-        <section id="player2">
-            <p id="player-2-name">
-    
-            </p>
-            <p id="player-2-health">
-    
-            </p>
-            <p id="player-2-energy">
-    
-            </p>
-        </section>
-      
-        <div>
-            <p>The battle has finished!</p>
-            <button id="link-button">Continue</button>
-            
-        </div>
+
+        <button id="link-button">Continue</button>
 
     </div>
     <script type="module" src="./battlefield/render-battlefield.js"></script>
