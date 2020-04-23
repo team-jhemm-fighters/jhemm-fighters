@@ -61,6 +61,10 @@ section {
     width: 100%;
 }
 
+form {
+    margin: 1em 0;
+}
+
 button, input[type="submit"] {
     display: block;
     margin: 1em auto;
