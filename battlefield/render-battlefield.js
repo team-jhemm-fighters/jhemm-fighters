@@ -12,16 +12,7 @@ const player2name = document.getElementById('player-2-name');
 const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
 
-// here's a very basic renderStats() function, to get refactoring started
-function renderStats() {
-    player1name.textContent = player1.name;
-    player1health.textContent = player1.health;
-    player1energy.textContent = player1.energy;
 
-    player2name.textContent = player2.name;
-    player2health.textContent = player2.health;
-    player2energy.textContent = player2.energy;
-}
 
 // continuing on with battlefield-specific DOM elements...
 
@@ -87,17 +78,6 @@ if (turnOrder === 'player1First') {
 
 const buttonLink = document.getElementById('link-button');
 
-
-function setRoundOneTrue() {
-    const temp = JSON.stringify(true);
-    localStorage.setItem('round1', temp);
-}
-function setRoundTwoTrue() {
-    const temp = JSON.stringify(true);
-    localStorage.setItem('round2', temp);
-}
-
-
 buttonLink.addEventListener('click', () => {
 
 
@@ -120,3 +100,23 @@ buttonLink.addEventListener('click', () => {
     
     location.href = link;
 });
+
+function setRoundOneTrue() {
+    const temp = JSON.stringify(true);
+    localStorage.setItem('round1', temp);
+}
+function setRoundTwoTrue() {
+    const temp = JSON.stringify(true);
+    localStorage.setItem('round2', temp);
+}
+
+// here's a very basic renderStats() function, to get refactoring started
+function renderStats() {
+    player1name.textContent = player1.name;
+    player1health.textContent = player1.health;
+    player1energy.textContent = player1.energy;
+
+    player2name.textContent = player2.name;
+    player2health.textContent = player2.health;
+    player2energy.textContent = player2.energy;
+}

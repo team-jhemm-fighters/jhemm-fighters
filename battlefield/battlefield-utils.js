@@ -9,7 +9,6 @@ export function turnOrder() {
     if (flip > .5) {
         turnPattern = 'player2First';
     }
-    console.log(flip, turnPattern);
     const temp = JSON.stringify(turnPattern);
     localStorage.setItem('TURN-PATTERN', temp);
 }
