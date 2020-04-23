@@ -64,3 +64,25 @@ export function isDead(hp) {
         return false;
     }
 }
+
+
+export function roundComplete(player1, player2) {
+   
+    localStorage.removeItem('round1');
+    localStorage.removeItem('round2');
+
+    player1.hasAttacked = false;
+    player1.hasDefended = false;
+
+    player2.hasDefended = false;
+    player2.hasAttacked = false;
+
+    player1.attackId = '';
+    player1.defendId = '';
+
+    player2.attackId = '';
+    player2.defendId = '';
+
+    setPlayerProfile('player1', player1);
+    setPlayerProfile('player2', player2);
+}

@@ -1,5 +1,6 @@
 import { getLocalStorage, getTurnOne, findById } from '../common/utils.js';
 import { applyDamage, isDead } from '../battlefield/battlefield-utils.js';
+import { roundComplete } from './battlefield-utils.js';
 import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
 
@@ -67,7 +68,7 @@ if (turnOrder === 'player1First') {
 const randomRollNumber = arrayDamage[0];
 const damageDealt = arrayDamage[1];
 const numberNeeded = arrayDamage[2];
-finalStats.textContent = 'The number the attacker rolled was ' + randomRollNumber + ', and they needed ' + numberNeeded + ' to hit. The defender took ' + damageDealt + ' damage.';
+finalStats.textContent = 'The number the attacker rolled was a ' + randomRollNumber + ', and they needed a ' + numberNeeded + ' or greater to hit. The defender took ' + damageDealt + ' damage.';
 renderStats();
 
 
@@ -89,22 +90,21 @@ buttonLink.addEventListener('click', () => {
     }
 
     if (roundOneDone === true) {
-        setRoundTwoTrue();
+        
+        roundComplete(player1, player2);
     }
     
     setRoundOneTrue();
 
     
+    // location.href = link;
+
     location.href = '/jhemm-fighters' + link;
 });
 
 function setRoundOneTrue() {
     const temp = JSON.stringify(true);
     localStorage.setItem('round1', temp);
-}
-function setRoundTwoTrue() {
-    const temp = JSON.stringify(true);
-    localStorage.setItem('round2', temp);
 }
 
 // here's a very basic renderStats() function, to get refactoring started
