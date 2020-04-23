@@ -27,6 +27,7 @@ function turnOne(player1, player2) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + player1.name + '. Pass the device to them before continuing!';
         navigateButton.textContent = 'Go to ' + player1.name + '\'s turn';
         link = '/player.html?id=' + player1.id + '&turn=attack';
+      
         //player 2 chooses defense
     } else if (player1.hasAttacked === true && player2.hasDefended === false) {
         nextPlayerSpan.textContent = 'The next action will be done by ' + player2.name + '. Pass the device to them before continuing!';
