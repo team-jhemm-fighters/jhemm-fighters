@@ -4,17 +4,30 @@ import attacks from '../data/attack.js';
 import defenses from '../data/defense.js';
 
 const button = document.getElementById('submit-action');
+const actionHtml = document.getElementById('actions');
+
+// player 1 HTML + getting
+const player1 = getLocalStorage('player1');
+const player1name = document.getElementById('player-1-name');
+const player1health = document.getElementById('player-1-health');
+const player1energy = document.getElementById('player-1-energy');
+
+// player 2 HTML + getting
+const player2 = getLocalStorage('player2');
+const player2name = document.getElementById('player-2-name');
+const player2health = document.getElementById('player-2-health');
+const player2energy = document.getElementById('player-2-energy');
+
 const searchParams = new URLSearchParams(window.location.search);
 const playerId = searchParams.get('id');
 const currentTurn = searchParams.get('turn');
 
-const playername = document.getElementById('name');
-const actionHtml = document.getElementById('actions');
-
-const currentPlayer = getLocalStorage(playerId);
-console.log(currentTurn);
-
-playername.textContent = currentPlayer.name;
+let currentPlayer = player1;
+let opposingPlayer = player2;
+if (playerId === 'player2') {
+    currentPlayer = player2;
+    opposingPlayer = player1;
+}
 
 const chosenClass = findById(classes, currentPlayer.class);
 let actions;
@@ -26,6 +39,14 @@ if (currentTurn === 'attack') {
     actions = defenses;
     actionsArray = 'defActions';
 }
+
+player1name.textContent = currentPlayer.name;
+player1health.textContent = currentPlayer.health;
+player1energy.textContent = currentPlayer.energy;
+
+player2name.textContent = opposingPlayer.name;
+player2health.textContent = opposingPlayer.health;
+player2energy.textContent = opposingPlayer.energy;
 
 
 for (let i = 0; i < chosenClass[actionsArray].length; i++) {
@@ -53,6 +74,7 @@ button.addEventListener('click', () => {
 
 function createAction(action) {
     const label = document.createElement('label');
+    const wrapper = document.createElement('div');
     label.classList.add('action');
     const radio = document.createElement('input');
 
@@ -69,12 +91,13 @@ function createAction(action) {
     actionName.textContent = action.name;
     const actionDetails = document.createElement('p');
     if (currentTurn === 'attack') {
-        actionDetails.textContent = `Chance To Hit:  ${action.minEffectiveRoll} Damage: ${action.damage} Energy Required: ${action.energyReq}`;
+        actionDetails.textContent = `Chance To Hit:  ${action.minEffectiveRoll} | Damage: ${action.damage} | Energy Required: ${action.energyReq}`;
     } else {
-        actionDetails.textContent = `Defense Rating: ${action.defenseRating} Energy Required: ${action.energyReq}`;
+        actionDetails.textContent = `Defense Rating: ${action.defenseRating} | Energy Required: ${action.energyReq}`;
     }
     const description = document.createElement('p');
     description.textContent = action.description;
-    label.append(actionName, description, actionDetails);
+    wrapper.append(actionName, description, actionDetails);
+    label.append(wrapper);
     return label;
 }

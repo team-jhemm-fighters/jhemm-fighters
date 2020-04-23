@@ -7,52 +7,82 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./common/style.css">
     <link rel="stylesheet" href="./battlefield/battlefield.css">
-    <title>Document</title>
+    <title>Jhemm Fighters | Battlefield</title>
 </head>
 
 <body>
-    <section id="player1">
-        <p id="player1name">
 
-        </p>
-        <p id="player1currentHealth">
+    <div class="page-wrapper">
 
-        </p>
-        <p id="player1currentEnergy">
+        <header class="logo-header">
+            <h1 class="logo">Jhemm Fighters</h1>
+        </header>
 
-        </p>
+        <header class="main-bg bordered-box">
+            <h2>Player actions</h2>
+        </header>
 
-    </section>
+        <!-- <img src="./assets/battle-bg/craftpix-402033-free-horizontal-2d-game-backgrounds/PNG/game_background_4/game_background_4.png" alt="An illustration of the battlefield" /> -->
+    
+        <section id="battleResults" class="main-bg bordered-box centered-text">
+            
+            <div id="first-action">
+                <h2>Action #1</h2>
+                <p id="player1Move"></p>
+                <p id="player1Description"></p>
+            </div>
+            
+            <div id="second-action">
+                <h2>Action #2</h2>
+                <p id="player2Move"></p>
+                <p id="player2Description"></p>
+            </div>
+            
+            <div id="battle-outcome">
+                <h2>Outcome</h2>
+                <p id="finalStats"></p>
+            </div>
 
-    <section id="battleResults">
+            <div>
+                <p>The battle has finished!</p>
+            </div>
+
+        </section>
+
+        <header class="main-bg bordered-box">
+            <h2>Results from this battle</h2>
+        </header>
+
+        <section id="player-stats" class="two-column-grid">
+
+            <article id="player1" class="main-bg bordered-box centered-text">
+                <p id="player-1-name">
         
-        <p id="player1Move"></p>
-        <p id="player1Description"></p>
+                </p>
+                <p>
+                    Health: <span id="player-1-health"></span>
+                </p>
+                <p>
+                    Energy: <span id="player-1-energy"></span>
+                </p>
+            </article>
         
-        <p id="finalStats"></p>
-
-        <p id="player2Move"></p>
-        <p id="player2Description"></p>
-  
-    </section>
-
-    <section id="player2">
-        <p id="player2name">
-
-        </p>
-        <p id="player2currentHealth">
-
-        </p>
-        <p id="player2currentEnergy">
-
-        </p>
-
-    </section>
-  
-    <div id="display-battlefield">
-        <p>Battle has happened</p>
-        <button id="link-button">Go back to interim</button>
+            <article id="player2" class="main-bg bordered-box centered-text">
+                <p id="player-2-name">
         
+                </p>
+                <p>
+                    Health: <span id="player-2-health"></span>
+                </p>
+                <p>
+                    Energy: <span id="player-2-energy"></span>
+                </p>
+            </article>
+
+        </section>
+
+        <button id="link-button">Continue</button>
+
     </div>
     <script type="module" src="./battlefield/render-battlefield.js"></script>
 </body>

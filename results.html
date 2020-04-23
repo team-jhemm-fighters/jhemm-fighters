@@ -7,28 +7,61 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./common/style.css">
     <link rel="stylesheet" href="./results/results.css">
-    <title>Document</title>
+    <title>Jhemm Fighters | Game Over!</title>
 </head>
 
 <body>
-    <div id="player1">
-        <img id="player-1-picture" src="">
-        <p id="player-1-name"></p>
-        <p id="player-1-class"></p>
-        <p id="player-1-hp"></p>
-        <p id="player-1-energy"></p>
 
+    <div class="page-wrapper">
+
+        <header class="logo-header">
+            <h1 class="logo">Jhemm Fighters</h1>
+        </header>
+
+        <header class="bordered-box main-bg">
+            <h1>Game Over!</h1>
+        </header>
+
+        <section class="two-column-grid bordered-box main-bg centered-text">
+
+            <article id="player1">
+                <h2>
+                    <span id="player-1-name"></span>'s final stats
+                </h2>
+                <img id="player-1-picture" src="">
+                <p>
+                    Class: <span id="player-1-class"></span>
+                </p>
+                <p>
+                    Health: <span id="player-1-hp"></span>
+                </p>
+                <p>
+                    Energy: <span id="player-1-energy"></span>
+                </p>
+            </article>
+        
+            <article id="player2">
+                <h2>
+                    <span id="player-2-name"></span>'s final stats
+                </h2>
+                <img id="player-2-picture" src="">
+                <p>
+                    Class: <span id="player-2-class"></span>
+                </p>
+                <p>
+                    Health: <span id="player-2-hp"></span>
+                </p>
+                <p>
+                    Energy: <span id="player-2-energy"></span>
+                </p>
+            </article>
+
+        </section>
+    
+        <button id="reset">Play Again?</button>
+        
     </div>
 
-    <div id="player2">
-        <img id="player-2-picture" src="">
-        <p id="player-2-name"></p>
-        <p id="player-2-class"></p>
-        <p id="player-2-hp"></p>
-        <p id="player-2-energy"></p>
-    </div>
-
-    <button id="reset">Play Again?</button>
     <script type="module" src="./results/results.js"></script>
 </body>
 
