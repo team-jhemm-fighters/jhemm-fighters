@@ -16,14 +16,15 @@ const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
 
 // DOM elements for action image rendering
-const attackerMoveImage = document.getElementById('action-1-image');
-const defenderMoveImage = document.getElementById('action-2-image');
+const action1image = document.getElementById('action-1-image');
+const action2image = document.getElementById('action-2-image');
 
 // DOM elements for action-related text rendering
 const player1Move = document.getElementById('player1Move');
 const player2Move = document.getElementById('player2Move');
 const player1Description = document.getElementById('player1Description');
 const player2Description = document.getElementById('player2Description');
+
 const finalStats = document.getElementById('finalStats');
 let turnOrder = getLocalStorage('TURN-PATTERN');
 
@@ -49,11 +50,14 @@ if (turnOrder === 'player1First') {
     const player1AttackObject = findById(attacks, player1.attackId);
     const player2DefenseObject = findById(defense, player2.defendId);
 
+    player1image.src = player1.image;
+    player2image.src = player2.image;
+
     player1Move.textContent = `${player1.name} used ${player1AttackObject.name} against ${player2.name}!`;
     player2Move.textContent = `${player2.name} defended with ${player2DefenseObject.name}.`;
 
-    attackerMoveImage.src = player1AttackObject.image;
-    defenderMoveImage.src = player2DefenseObject.image;
+    action1image.src = player1AttackObject.image;
+    action2image.src = player2DefenseObject.image;
 
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
@@ -63,14 +67,17 @@ if (turnOrder === 'player1First') {
     const player1DefenseObject = findById(defense, player1.defendId);
     const player2AttackObject = findById(attacks, player2.attackId);
 
-    player1Move.textContent = `${player1.name} defended with ${player1DefenseObject.name}.`;
-    player2Move.textContent = `${player2.name} used ${player2AttackObject.name} against ${player1.name}!`;
-    
-    attackerMoveImage.src = player2AttackObject.image;
-    defenderMoveImage.src = player1DefenseObject.image;
+    player1image.src = player2.image;
+    player2image.src = player1.image;
 
-    player1Description.textContent = player1DefenseObject.description;
-    player2Description.textContent = player2AttackObject.description;
+    player1Move.textContent = `${player2.name} used ${player2AttackObject.name} against ${player1.name}!`;
+    player2Move.textContent = `${player1.name} defended with ${player1DefenseObject.name}.`;
+    
+    action1image.src = player2AttackObject.image;
+    action2image.src = player1DefenseObject.image;
+
+    player1Description.textContent = player2AttackObject.description;
+    player2Description.textContent = player1DefenseObject.description;
     
     arrayDamage = applyBattleResults(player2, player1);
 } 
@@ -112,12 +119,10 @@ function setRoundOneTrue() {
 
 // here's a very basic renderStats() function, to get refactoring started
 function renderStats() {
-    player1image.src = player1.image;
     player1name.textContent = player1.name;
     player1health.textContent = player1.health;
     player1energy.textContent = player1.energy;
 
-    player2image.src = player2.image;
     player2name.textContent = player2.name;
     player2health.textContent = player2.health;
     player2energy.textContent = player2.energy;
