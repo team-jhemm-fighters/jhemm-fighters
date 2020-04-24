@@ -35,6 +35,7 @@ export function calculateDamage(attackAction, defendAction) {
     const attackObject = findById(attacks, attackAction);
     const defendObject = findById(defense, defendAction);
     const randomNum = Math.ceil(Math.random() * 10);
+    
     // calculate number attacker needs to hit
     const hitChance = attackObject.minEffectiveRoll + defendObject.defenseRating;
 
