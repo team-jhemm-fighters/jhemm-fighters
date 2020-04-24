@@ -18,10 +18,15 @@
     height: 150px;
     width: 150px;
     object-fit: cover;
+    object-position: top;
     filter: grayscale();
 }
 
 #character-selector input[type="radio"]:checked + img {
     border: 5px solid var(--accent-extra-light);
     filter: none;
+}
+
+button {
+    margin: 2em auto;
 }
