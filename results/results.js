@@ -36,16 +36,16 @@ if (player1Dead === true) {
     player2Profile.classList.add('winner');
 
     // change overlay images
-    player1Flair.src = './assets/skull.png';
-    player2Flair.src = './assets/laurels.png';
+    player1Flair.src = '/jhemm-fighters/assets/skull.png';
+    player2Flair.src = '/jhemm-fighters/assets/laurels.png';
 
 } else {
     player2Profile.classList.add('loser');
     player1Profile.classList.add('winner');
 
     // change overlay images
-    player1Flair.src = './assets/laurels.png';
-    player2Flair.src = './assets/skull.png';
+    player1Flair.src = '/jhemm-fighters/assets/laurels.png';
+    player2Flair.src = '/jhemm-fighters/assets/skull.png';
 }
 
 const player1ClassObject = findById(classes, player1.class);
