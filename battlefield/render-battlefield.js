@@ -107,9 +107,9 @@ buttonLink.addEventListener('click', () => {
     }
     setRoundOneTrue();
     // to make work locally
-    location.href = link;
+    // location.href = link;
     // to make work on github pages
-    // location.href = '/jhemm-fighters' + link;
+    location.href = '/jhemm-fighters' + link;
 });
 
 function setRoundOneTrue() {
