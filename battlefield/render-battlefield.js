@@ -15,6 +15,11 @@ const player2name = document.getElementById('player-2-name');
 const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
 
+// DOM elements for action image rendering
+const attackerMoveImage = document.getElementById('action-1-image');
+const defenderMoveImage = document.getElementById('action-2-image');
+
+// DOM elements for action-related text rendering
 const player1Move = document.getElementById('player1Move');
 const player2Move = document.getElementById('player2Move');
 const player1Description = document.getElementById('player1Description');
@@ -43,8 +48,13 @@ let arrayDamage;
 if (turnOrder === 'player1First') {
     const player1AttackObject = findById(attacks, player1.attackId);
     const player2DefenseObject = findById(defense, player2.defendId);
+
     player1Move.textContent = `${player1.name} used ${player1AttackObject.name} against ${player2.name}!`;
     player2Move.textContent = `${player2.name} defended with ${player2DefenseObject.name}.`;
+
+    attackerMoveImage.src = player1AttackObject.image;
+    defenderMoveImage.src = player2DefenseObject.image;
+
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
     
@@ -52,8 +62,13 @@ if (turnOrder === 'player1First') {
 } else {
     const player1DefenseObject = findById(defense, player1.defendId);
     const player2AttackObject = findById(attacks, player2.attackId);
+
     player1Move.textContent = `${player1.name} defended with ${player1DefenseObject.name}.`;
     player2Move.textContent = `${player2.name} used ${player2AttackObject.name} against ${player1.name}!`;
+    
+    attackerMoveImage.src = player2AttackObject.image;
+    defenderMoveImage.src = player1DefenseObject.image;
+
     player1Description.textContent = player1DefenseObject.description;
     player2Description.textContent = player2AttackObject.description;
     
@@ -85,9 +100,9 @@ buttonLink.addEventListener('click', () => {
     }
     setRoundOneTrue();
     // to make work locally
-    // location.href = link;
+    location.href = link;
     // to make work on github pages
-    location.href = '/jhemm-fighters' + link;
+    // location.href = '/jhemm-fighters' + link;
 });
 
 function setRoundOneTrue() {
