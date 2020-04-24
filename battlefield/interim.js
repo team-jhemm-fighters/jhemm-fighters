@@ -6,7 +6,6 @@ const nextPlayerSpan = document.getElementById('next-player-span');
 const player1 = getLocalStorage('player1');
 const player2 = getLocalStorage('player2');
 let turnOneComplete = false;
-let turnTwoComplete = false;
 // If we went to the battlefield and came back once
 turnOneComplete = getTurnOne();
 
@@ -23,13 +22,13 @@ let link = '/interim.html';
 if (turnPattern === 'player1First') {
     if (!turnOneComplete) {
         turn(player1, player2);
-    } else if (turnOneComplete && !turnTwoComplete) {
+    } else if (turnOneComplete) {
         turn(player2, player1);
     } 
 } else {
     if (!turnOneComplete) {
         turn(player2, player1);
-    } else if (turnOneComplete && !turnTwoComplete) {
+    } else if (turnOneComplete) {
         turn(player1, player2);
     } 
 }
