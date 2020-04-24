@@ -11,7 +11,7 @@ const recoverEnergy = {
 const silentDaggerThrow = {
     id: 'action1',
     name: 'Dagger Throw',
-    image: '/jhemm-fighters/assets/restoreenergy.jpg',
+    image: '/jhemm-fighters/assets/daggerthrow.jpg',
     description: 'You quickly toss one of your throwing daggers at your enemy!',
     minEffectiveRoll: 3,
     damage: 1,
@@ -56,7 +56,7 @@ const brawnBullRush = {
 const brawnTwoHandedBlow = {
     id: 'action6',
     name: 'Two Handed Blow',
-    image: '/jhemm-fighters/assets/twohandedstrike.jpg',
+    image: '/jhemm-fighters/assets/twohandedstrike.webp',
     description: 'With a heave you lift your two handed maul and attempt to pulverize your opponent!',
     minEffectiveRoll: 6,
     damage: 4,
