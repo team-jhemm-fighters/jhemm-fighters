@@ -22,7 +22,7 @@
 }
 
 #actions-and-outcome {
-    position: relative;
+    /* position: relative; */
 }
 
 #action-1-image, #action-2-image {
@@ -33,7 +33,7 @@
 }
 
 #battle-outcome {
-    position: absolute;
+    /* position: absolute; */
     color: var(--main-bg-color);
     padding: 0 1em;
 }
