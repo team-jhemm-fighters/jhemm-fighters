@@ -43,4 +43,11 @@
 #actions input[type="radio"]:checked + div {
     color: var(--main-bg-color);
     background-color: var(--accent-extra-light);
+    cursor: pointer;
+}
+
+#actions input[type="radio"] + div:hover {
+    color: var(--main-bg-color);
+    background-color: var(--accent-extra-light);
+    cursor: pointer;
 }
