@@ -1,0 +1,19 @@
+.overlay-flair {
+    position: relative;
+}
+
+#player-1-picture, #player-2-picture {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.results-flair {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    filter: invert(1);
+}
