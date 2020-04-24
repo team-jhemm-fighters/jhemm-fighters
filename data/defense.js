@@ -73,7 +73,7 @@ const casterLightningDodge = {
 const casterStoneWall = {
     id: 'action8',
     name: 'Stone Wall',
-    image: '/jhemm-fighters/assets/wallofstone.jpg',
+    image: '/jhemm-fighters/assets/wallofstone.png',
     description: 'You call upon the Earth to raise a wall of stone!.',
     defenseRating: 2,
     health: 0,
