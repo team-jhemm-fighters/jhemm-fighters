@@ -6,18 +6,19 @@ import defenses from '../data/defense.js';
 const button = document.getElementById('submit-action');
 const actionHtml = document.getElementById('actions');
 
-// player 1 HTML + getting
+// player 1 HTML + getting their data from local storage
 const player1 = getLocalStorage('player1');
 const player1name = document.getElementById('player-1-name');
 const player1health = document.getElementById('player-1-health');
 const player1energy = document.getElementById('player-1-energy');
 
-// player 2 HTML + getting
+// player 2 HTML + getting their data from local storage
 const player2 = getLocalStorage('player2');
 const player2name = document.getElementById('player-2-name');
 const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
 
+// grabs the current player and whether their attack/defense options are displayed
 const searchParams = new URLSearchParams(window.location.search);
 const playerId = searchParams.get('id');
 const currentTurn = searchParams.get('turn');
@@ -25,6 +26,7 @@ const currentTurn = searchParams.get('turn');
 let currentPlayer = player1;
 let opposingPlayer = player2;
 
+// swaps current/opposing player depending on page url
 if (playerId === 'player2') {
     currentPlayer = player2;
     opposingPlayer = player1;
@@ -46,12 +48,14 @@ player2health.textContent = opposingPlayer.health;
 player2energy.textContent = opposingPlayer.energy;
 
 
+// creates all available actions for a specific player while disabling unavailable ones
 for (let i = 0; i < chosenClass[actionsArray].length; i++) {
     const choosableActions = findById(actions, chosenClass[actionsArray][i]);
     const actionDom = createAction(choosableActions);
     actionHtml.appendChild(actionDom);
 }
 
+// locks in player action, sets to local storage, and goes back to interim on click
 button.addEventListener('click', () => {
     
     const selectedAction = document.querySelector('input[type=radio]:checked');
@@ -64,7 +68,6 @@ button.addEventListener('click', () => {
         currentPlayer.defendId = selectedAction.value;
     }
     setPlayerProfile(playerId, currentPlayer);
-    // setActions(selectedAction.value);
 
     window.location.href = './interim.html';
 });
