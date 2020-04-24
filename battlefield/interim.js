@@ -36,9 +36,9 @@ if (turnPattern === 'player1First') {
 // Link gets updated in conditional turn logic
 navigateButton.addEventListener('click', () => {
     // to make work on github pages
-    location.href = '/jhemm-fighters' + link;
+    // location.href = '/jhemm-fighters' + link;
     // to make work locally
-    // location.href = link;
+    location.href = link;
 });
 
 function turn(attacker, defender) {

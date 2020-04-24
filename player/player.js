@@ -6,6 +6,9 @@ import defenses from '../data/defense.js';
 const button = document.getElementById('submit-action');
 const actionHtml = document.getElementById('actions');
 
+// player image DOM element, to be sourced dynamically
+const currentPlayerImage = document.getElementById('player-image');
+
 // player 1 HTML + getting
 const player1 = getLocalStorage('player1');
 const player1name = document.getElementById('player-1-name');
@@ -37,6 +40,10 @@ let actionsArray;
 
 determineTurn();
 
+// set character image based on current player's class
+currentPlayerImage.src = currentPlayer.image;
+
+// set DOM elements based on both players' stat data
 player1name.textContent = currentPlayer.name;
 player1health.textContent = currentPlayer.health;
 player1energy.textContent = currentPlayer.energy;

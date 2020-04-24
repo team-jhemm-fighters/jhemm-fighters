@@ -28,7 +28,7 @@ const silentSmokeBomb = {
 const silentMirrorImage = {
     id: 'action3',
     name: 'Mirror Image',
-    image: '../assets/Mirror-Self.jpg',
+    image: '../assets/Mirror-Self.webp',
     description: 'You start your incantation and create an illusion of yourself confusing your opponent!',
     defenseRating: 4,
     health: 0,
