@@ -5,9 +5,24 @@
 #player-image {
     width: 100%;
     height: 100%;
-    max-height: 100vh;
     object-fit: cover;
     object-position: top;
+}
+
+#stats {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+}
+
+
+#player-1-info, #player-2-info {
+    padding: 1em 1em;
+    margin-block-end: 1em;
+}
+
+#player-1-info {
+    color: var(--main-bg-color);
 }
 
 #actions div {
@@ -28,18 +43,11 @@
 #actions input[type="radio"]:checked + div {
     color: var(--main-bg-color);
     background-color: var(--accent-extra-light);
+    cursor: pointer;
 }
 
-#player-1-info {
-    position: absolute;
-    top: 33%;
-    padding: 0 1em;
+#actions input[type="radio"] + div:hover {
     color: var(--main-bg-color);
-}
-
-#player-2-info {
-    position: absolute;
-    top: 69%;
-    right: 10%;
-    padding: 0 1em;
+    background-color: var(--accent-extra-light);
+    cursor: pointer;
 }

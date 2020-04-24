@@ -18,34 +18,49 @@
             <h1 class="logo">Jhemm Fighters</h1>
         </header>
 
-        <header class="main-bg bordered-box">
-            <h2>Player actions</h2>
-        </header>
-
         <!-- <img src="./assets/battle-bg/craftpix-402033-free-horizontal-2d-game-backgrounds/PNG/game_background_4/game_background_4.png" alt="An illustration of the battlefield" /> -->
     
-        <section id="battleResults" class="main-bg bordered-box centered-text">
-            
-            <div id="first-action">
-                <h2>Action #1</h2>
-                <p id="player1Move"></p>
-                <p id="player1Description"></p>
-            </div>
-            
-            <div id="second-action">
-                <h2>Action #2</h2>
-                <p id="player2Move"></p>
-                <p id="player2Description"></p>
-            </div>
-            
-            <div id="battle-outcome">
-                <h2>Outcome</h2>
-                <p id="finalStats"></p>
-            </div>
+        <header class="main-bg bordered-box">
+            <h2>It's time to battle!</h2>
+        </header>
 
-            <div>
-                <p>The battle has finished!</p>
-            </div>
+        <section id="battleResults" class="two-column-grid main-bg bordered-box centered-text">
+            
+            <!-- <article class="two-column-grid"> -->
+
+                <div id="first-action" class="flex-row">
+                    <img id="player-1-image" src="" alt="Image of the player who acted first." />
+                    <div id="player-1-actions" class="main-bg bordered-box fade-in">
+                        <h2>Action #1</h2>
+                        <p id="player1Move"></p>
+                        <p id="player1Description"></p>
+                    </div>
+                </div>
+                
+                <div id="actions-and-outcome" class="flex-column">
+
+                    <img id="action-1-image" class="circle-image slide-from-left" src="./assets/lightningstrike.jpg" alt="Image of the first action." />
+                    
+                    <div id="battle-outcome" class="bordered-box accent-bg fade-in">
+                        <h2>Outcome</h2>
+                        <p id="finalStats"></p>
+                        <p>The battle has finished!</p>
+                    </div>
+                    
+                    <img id="action-2-image" class="circle-image slide-from-right" src="./assets/lightningstrike.jpg" alt="Image of the second action." />
+                    
+                </div>
+                
+                <div id="second-action" class="flex-row">
+                    <img id="player-2-image" src="" alt="Image of the player who acted second." />
+                    <div id="player-2-actions" class="main-bg bordered-box fade-in">
+                        <h2>Action #2</h2>
+                        <p id="player2Move"></p>
+                        <p id="player2Description"></p>
+                    </div>
+                </div>
+
+            <!-- </article> -->
 
         </section>
 
@@ -56,9 +71,9 @@
         <section id="player-stats" class="two-column-grid">
 
             <article id="player1" class="main-bg bordered-box centered-text">
-                <p id="player-1-name">
+                <h3 id="player-1-name">
         
-                </p>
+                </h3>
                 <p>
                     Health: <span id="player-1-health"></span>
                 </p>
@@ -68,9 +83,9 @@
             </article>
         
             <article id="player2" class="main-bg bordered-box centered-text">
-                <p id="player-2-name">
+                <h3 id="player-2-name">
         
-                </p>
+                </h3>
                 <p>
                     Health: <span id="player-2-health"></span>
                 </p>

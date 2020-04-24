@@ -1,3 +1,56 @@
+@import '../common/animations.css';
+
+#first-action, #second-action {
+    position: relative;
+}
+
+#player-1-actions, #player-2-actions {
+    position: absolute;
+    bottom: 20px;
+    padding: 0 1em;
+    width: 90%;
+}
+
+#player-1-image, #player-2-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 #player-stats article {
     width: 100%;
+}
+
+#actions-and-outcome {
+    /* position: relative; */
+}
+
+#action-1-image, #action-2-image {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    margin: 1em auto;
+}
+
+#battle-outcome {
+    /* position: absolute; */
+    color: var(--main-bg-color);
+    padding: 0 1em;
+}
+
+/* animation delays */
+
+/* actor1 actions should display first */
+#player-1-actions, #action-1-image {
+    animation-delay: 1s;
+}
+
+/* actor2 actions should display after actor1 */
+#player-2-actions, #action-2-image {
+    animation-delay: 3s;
+}
+
+/* battle outcome should display last */
+#battle-outcome {
+    animation-delay: 6s;
 }

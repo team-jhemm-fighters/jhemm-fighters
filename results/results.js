@@ -18,6 +18,10 @@ const player2Class = document.getElementById('player-2-class');
 const player2Hp = document.getElementById('player-2-hp');
 const player2Energy = document.getElementById('player-2-energy');
 
+// DOM elements to add fun images to overlay onto the winner/loser
+const player1Flair = document.getElementById('player-1-flair');
+const player2Flair = document.getElementById('player-2-flair');
+
 // other html
 const resetButton = document.getElementById('reset');
 
@@ -31,9 +35,17 @@ if (player1Dead === true) {
     player1Profile.classList.add('loser');
     player2Profile.classList.add('winner');
 
+    // change overlay images
+    player1Flair.src = '/jhemm-fighters/assets/skull.png';
+    player2Flair.src = '/jhemm-fighters/assets/laurels.png';
+
 } else {
     player2Profile.classList.add('loser');
     player1Profile.classList.add('winner');
+
+    // change overlay images
+    player1Flair.src = '/jhemm-fighters/assets/laurels.png';
+    player2Flair.src = '/jhemm-fighters/assets/skull.png';
 }
 
 const player1ClassObject = findById(classes, player1.class);
