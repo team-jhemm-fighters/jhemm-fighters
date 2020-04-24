@@ -5,18 +5,26 @@ import attacks from '../data/attack.js';
 import defense from '../data/defense.js';
 
 // DOM elements for updated stat rendering, identical to elements/variables used on player page -- can probably be refactored along with player page dom manipulation into a renderStats() utility of some kind
+const player1image = document.getElementById('player-1-image');
 const player1name = document.getElementById('player-1-name');
 const player1health = document.getElementById('player-1-health');
 const player1energy = document.getElementById('player-1-energy');
 
+const player2image = document.getElementById('player-2-image');
 const player2name = document.getElementById('player-2-name');
 const player2health = document.getElementById('player-2-health');
 const player2energy = document.getElementById('player-2-energy');
 
+// DOM elements for action image rendering
+const action1image = document.getElementById('action-1-image');
+const action2image = document.getElementById('action-2-image');
+
+// DOM elements for action-related text rendering
 const player1Move = document.getElementById('player1Move');
 const player2Move = document.getElementById('player2Move');
 const player1Description = document.getElementById('player1Description');
 const player2Description = document.getElementById('player2Description');
+
 const finalStats = document.getElementById('finalStats');
 let turnOrder = getLocalStorage('TURN-PATTERN');
 
@@ -41,8 +49,16 @@ let arrayDamage;
 if (turnOrder === 'player1First') {
     const player1AttackObject = findById(attacks, player1.attackId);
     const player2DefenseObject = findById(defense, player2.defendId);
+
+    player1image.src = player1.image;
+    player2image.src = player2.image;
+
     player1Move.textContent = `${player1.name} used ${player1AttackObject.name} against ${player2.name}!`;
     player2Move.textContent = `${player2.name} defended with ${player2DefenseObject.name}.`;
+
+    action1image.src = player1AttackObject.image;
+    action2image.src = player2DefenseObject.image;
+
     player1Description.textContent = player1AttackObject.description;
     player2Description.textContent = player2DefenseObject.description;
     
@@ -50,10 +66,18 @@ if (turnOrder === 'player1First') {
 } else {
     const player1DefenseObject = findById(defense, player1.defendId);
     const player2AttackObject = findById(attacks, player2.attackId);
-    player1Move.textContent = `${player1.name} defended with ${player1DefenseObject.name}.`;
-    player2Move.textContent = `${player2.name} used ${player2AttackObject.name} against ${player1.name}!`;
-    player1Description.textContent = player1DefenseObject.description;
-    player2Description.textContent = player2AttackObject.description;
+
+    player1image.src = player2.image;
+    player2image.src = player1.image;
+
+    player1Move.textContent = `${player2.name} used ${player2AttackObject.name} against ${player1.name}!`;
+    player2Move.textContent = `${player1.name} defended with ${player1DefenseObject.name}.`;
+    
+    action1image.src = player2AttackObject.image;
+    action2image.src = player1DefenseObject.image;
+
+    player1Description.textContent = player2AttackObject.description;
+    player2Description.textContent = player1DefenseObject.description;
     
     arrayDamage = applyBattleResults(player2, player1);
 } 
