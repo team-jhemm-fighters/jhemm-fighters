@@ -82,7 +82,7 @@ const casterStoneWall = {
 const casterFrostShield = {
     id: 'action9',
     name: 'Frost Shield',
-    image: '/jhemm-fighters/assets/frost armor.jpg',
+    image: '/jhemm-fighters/assets/frost armor.png',
     description: 'You call upon the water in your body to surround your skin with a shield of frost!',
     defenseRating: 4,
     health: 0,
