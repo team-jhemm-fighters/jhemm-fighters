@@ -99,6 +99,10 @@ article {
     padding: 0 2.5em;
 }
 
+a, a:hover, a:visited {
+    color: var(--accent-light);
+}
+
 button, input[type="submit"] {
     border: 0px;
     border: 2px solid var(--main-bg-color);

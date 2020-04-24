@@ -2,8 +2,8 @@ const silent = {
     id: 'silent',
     name: 'The Silent',
     image: '/jhemm-fighters/assets/silent1.jpg',
-    baseHp: 13,
-    baseEnergy: 13,
+    baseHp: 8,
+    baseEnergy: 8,
 
     atkActions: [
         'action0',
@@ -44,8 +44,8 @@ const caster = {
     id: 'caster',
     name: 'The Caster',
     image: '/jhemm-fighters/assets/caster1.jpg',
-    baseHp: 9,
-    baseEnergy: 17,
+    baseHp: 7,
+    baseEnergy: 11,
 
     atkActions: [
         'action0',
