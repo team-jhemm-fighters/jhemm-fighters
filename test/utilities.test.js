@@ -26,7 +26,7 @@ test('testing findById', function(assert) {
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const foundId1 = findById(array, id1)
+    const foundId1 = findById(array, id1);
     const foundId2 = findById(array, id2);
 
     //Assert
@@ -62,7 +62,7 @@ test('testing calculateEnergy', function(assert) {
             id: 'action1',
             energyReq: 5
         }
-    ]
+    ];
 
     //Act 
     // Call the function you're testing and set the result to a const
