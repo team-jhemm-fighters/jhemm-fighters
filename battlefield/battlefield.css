@@ -6,10 +6,9 @@
 
 #player-1-actions, #player-2-actions {
     position: absolute;
-    top: 50%;
-    left: 10%;
-    right: 10%;
+    bottom: 20px;
     padding: 0 1em;
+    width: 90%;
 }
 
 #player-1-image, #player-2-image {
