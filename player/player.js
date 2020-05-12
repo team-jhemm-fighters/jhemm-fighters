@@ -56,8 +56,10 @@ player2energy.textContent = opposingPlayer.energy;
 
 
 // creates all available actions for a specific player while disabling unavailable ones
+// ooo nice dynamic property access!
 for (let i = 0; i < chosenClass[actionsArray].length; i++) {
     const choosableActions = findById(actions, chosenClass[actionsArray][i]);
+    // soooo coool!
     const actionDom = createAction(choosableActions);
     actionHtml.appendChild(actionDom);
 }
