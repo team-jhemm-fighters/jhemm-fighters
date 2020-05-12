@@ -3,7 +3,6 @@ import { findById, setPlayerProfile } from '../common/utils.js';
 
 const playerForms = document.getElementById('character-selector');
 
-
 playerForms.addEventListener('submit', (event) => {
     event.preventDefault();
     // Grab Form Data
@@ -26,31 +25,27 @@ function makeUsers(playerData) {
     const player1Character = findById(classes, player1Class);
     const player2Character = findById(classes, player2Class);
     // Player Object Structures
-    const player1Object = { 
-        id: 'player1',
-        name: player1Name,
-        class: player1Class,
-        image: player1Character.image,
-        health: player1Character.baseHp,
-        energy: player1Character.baseEnergy,
-        hasAttacked: false,
-        attackId: '',
-        hasDefended: false,
-        defendId: ''
-    };
-    const player2Object = { 
-        id: 'player2',
-        name: player2Name,
-        class: player2Class,
-        image: player2Character.image,
-        health: player2Character.baseHp,
-        energy: player2Character.baseEnergy,
-        hasAttacked: false,
-        attackId: '',
-        hasDefended: false,
-        defendId: ''
-    };
+    // this could be refactored into a 'makeInitialPlayer' function
+    const player1Object = makeInitialPlayer(player1Name, player1Class, player1Character, 'player1');
+    const player2Object = makeInitialPlayer(player2Name, player2Class, player2Character, 'player2');
+
     // Sets Player Objects to Local Storage
     setPlayerProfile('player1', player1Object);
     setPlayerProfile('player2', player2Object);
 }
+
+function makeInitialPlayer(playerName, playerClass, playerCharacter, id) {
+    return {
+        id,
+        name: playerName,
+        class: playerClass,
+        image: playerCharacter.image,
+        health: playerCharacter.baseHp,
+        energy: playerCharacter.baseEnergy,
+        hasAttacked: false,
+        attackId: '',
+        hasDefended: false,
+        defendId: ''
+    };
+}
+

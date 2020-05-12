@@ -16,6 +16,8 @@ export function turnOrder() {
 // change health and energy based on battle results
 export function applyBattleResults(attackingPlayer, defendingPlayer) {
 
+    // you could 'destructure' the items from the array you return like so
+    // const [firstThing, secondThing, thirdThing] = calculateDamage(attackingPlayer.attackId, defendingPlayer.defendId);
     const damageNum = calculateDamage(attackingPlayer.attackId, defendingPlayer.defendId);
     defendingPlayer.health = defendingPlayer.health - damageNum[1];
 
@@ -37,6 +39,7 @@ export function calculateDamage(attackAction, defendAction) {
     const randomNum = Math.ceil(Math.random() * 10);
     
     // calculate number attacker needs to hit
+    // sweeeeeeet
     const hitChance = attackObject.minEffectiveRoll + defendObject.defenseRating;
 
     if (hitChance <= randomNum) {
@@ -55,13 +58,7 @@ export function calculateEnergy(array, action) {
 }
 
 // checks whether hp is 0 or below
-export function isDead(hp) {
-    if (hp <= 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
+export const isDead = (hp) => hp <= 0;
 
 // reset our state on certain objects
 export function roundComplete(player1, player2) {

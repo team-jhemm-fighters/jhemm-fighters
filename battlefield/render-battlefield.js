@@ -99,6 +99,7 @@ buttonLink.addEventListener('click', () => {
     if (player1Dead || player2Dead) {
         link = '/results.html';
     } else {
+        // i'm still suspicious of this 'routing centered' logic, but yall made it work!
         link = '/interim.html';
 
     }
